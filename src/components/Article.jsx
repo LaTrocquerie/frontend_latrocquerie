@@ -27,7 +27,7 @@ const Article = ({ data }) => {
       <p className="md:w-1/2">{data.description2}</p>
       <p className="md:w-1/2">{data.description3}</p>
 
-      {data.bouton ? (
+      {data.bouton === 1 ? (
         <a href={data.url}>
           <button
             className={

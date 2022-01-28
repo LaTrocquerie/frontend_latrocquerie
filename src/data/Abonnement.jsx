@@ -5,6 +5,7 @@ const AbonnementData = [
   */
 
   // 1 - formules d'abonnement
+  // bloc_order 1
   {
     component: "abonnement",
     data: {
@@ -42,6 +43,8 @@ const AbonnementData = [
     },
   },
   // 2 - formulaire rdv
+  // bloc_order 2
+
   {
     component: "formulaire",
     data: {

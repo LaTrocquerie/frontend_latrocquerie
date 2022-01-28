@@ -21,7 +21,7 @@ const Product = ({ data }) => {
       </div>
       <h1 className="uppercase text-center font-light text-h1">{data.titre}</h1>
       <section className="md:w-1/2 flex flex-col gap-3 mt-10">
-        {data.presentation.map((pres) => (
+        {data.details.map((pres) => (
           <div className=" flex justify-center gap-3 my-2 flex-col md:flex-row">
             <p className=" md:pr-4">{pres.infos}</p>
             <img

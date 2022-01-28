@@ -3,27 +3,27 @@ const HeaderData = {
   menus: [
     {
       to: "/",
-      name: "Accueil",
+      name: "Accueil", // id_pages 1
     },
     {
       to: "/concept",
-      name: "Concept",
+      name: "Concept", // id_pages 2
     },
     {
       to: "/abonnement",
-      name: "Abonnement",
+      name: "Abonnement", // id_pages 3
     },
     {
       to: "/echanges",
-      name: "Échanges",
+      name: "Échanges", // id_pages 4
     },
     {
       to: "/services",
-      name: "Services",
+      name: "Services", // id_pages 5
     },
     {
       to: "/contact",
-      name: "Contact",
+      name: "Contact", // id_pages 6
     },
   ],
   logo: {

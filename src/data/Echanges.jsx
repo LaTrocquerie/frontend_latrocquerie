@@ -8,6 +8,8 @@ const echanges = [
   */
 
   // Dans la Trocquerie, il est possible de troquer:
+  // bloc_order 1
+
   {
     component: "article",
     data: {
@@ -23,6 +25,8 @@ const echanges = [
   },
 
   // exemples d'objets
+  // bloc_order 2
+
   {
     component: "product",
     data: {
@@ -46,6 +50,8 @@ const echanges = [
   },
 
   // types d'objets
+  // bloc_order 3
+
   {
     component: "objets",
     data: {
@@ -71,6 +77,8 @@ const echanges = [
     },
   },
   // présentation troc
+  // bloc_order 4
+
   {
     component: "categorie",
     data: {
@@ -104,29 +112,13 @@ const echanges = [
           alt: "gommette vert",
         },
       ],
-      principe: [
-        // {
-        //   id: 1,
-        //   color: "bleu = bleu",
-        // },
-        // {
-        //   id: 2,
-        //   color: "rose = rose",
-        // },
-        // {
-        //   id: 3,
-        //   color: "jaune = jaune",
-        // },
-        // {
-        //   id: 4,
-        //   color: "vert = vert",
-        // },
-      ],
       infos: "Il est également possible de combiner des couleurs ",
       more: "(de nombreuses combinaisons possibles à retrouver en boutique)",
     },
   },
   // Comment ça marche:
+  // bloc_order 5
+
   {
     component: "article",
     data: {

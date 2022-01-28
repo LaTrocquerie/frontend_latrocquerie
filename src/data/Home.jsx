@@ -1,5 +1,7 @@
 const home = [
   // présentation concept, avec bouton
+  // bloc_order 1
+
   {
     component: "article",
     data: {
@@ -17,6 +19,8 @@ const home = [
     },
   },
   // présentation concept 2, avec bouton
+  // bloc_order 2
+
   {
     component: "article",
     data: {

@@ -18,7 +18,7 @@ const Objets = ({ data }) => {
       <div className="text-right w-full">
         <ButtonAdmin type="objets" data={data} />
       </div>
-      {data.categorie.map((cat) => (
+      {data.details.map((cat) => (
         <section className="md:w-1/2">
           <h1 className="uppercase font-bold text-h2">{cat.appartenance}</h1>
           <p>{cat.cible}</p>

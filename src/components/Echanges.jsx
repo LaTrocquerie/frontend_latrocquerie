@@ -25,25 +25,18 @@ const Echanges = ({ data }) => {
         <p className="">{data.description}</p>
         <h2 className="text-center mt-4">{data.titre}</h2>
         <section className="flex justify-center gap-4 mt-4">
-          {data.gommettes.map((gommette) => (
+          {data.details.map((gommette) => (
             <section>
-              <p>
-                {gommette.color}
+              <div key={gommette.id}>
                 <img
                   className="blob w-16 h-16"
                   src={gommette.src}
                   alt={gommette.alt}
                 />
-              </p>
+              </div>
             </section>
           ))}
         </section>
-
-        {data.principe.map((princ) => (
-          <section className="p-1 flex flex-row justify-around">
-            {princ.color}
-          </section>
-        ))}
         <div className="p-4">
           <p className="text-center">{data.infos}</p>
           <p className="text-xs text-center mt-7">{data.more}</p>

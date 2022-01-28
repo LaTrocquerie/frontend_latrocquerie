@@ -6,7 +6,7 @@ import Logo from "./Logo";
 import ButtonAdmin from "./ButtonAdmin";
 
 /**
- * NavBar version desktopet mobile
+ * NavBar version desktop et mobile
  *
  * @return {*}
  * Importation de Disclosure pour Ouvrir/fermer le burger en responsive

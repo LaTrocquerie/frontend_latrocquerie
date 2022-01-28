@@ -8,6 +8,8 @@ const concept = [
   */
 
   // présentation du concept
+  // bloc_order 1
+
   {
     component: "article",
     data: {
@@ -23,6 +25,8 @@ const concept = [
       bouton: false,
     },
   },
+  // bloc_order 2
+
   // 2 - citation 1
   {
     component: "concept",
@@ -34,6 +38,8 @@ const concept = [
     },
   },
   // 3 - cible client
+  // bloc_order 3
+
   {
     component: "client",
     data: {
@@ -44,6 +50,8 @@ const concept = [
     },
   },
   // 4 - citation 2
+  // bloc_order 4
+
   {
     component: "concept",
     data: {
@@ -54,6 +62,8 @@ const concept = [
     },
   },
   // 5 - présentation fondatrice
+  // bloc_order 5
+
   {
     component: "articleImage",
     data: {

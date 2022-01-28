@@ -92,11 +92,11 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                     onChange={(event) => setTitre(event.target.value)}
                   />
                 </label>
-                <label htmlFor="description">
+                <label htmlFor="1">
                   Paragraphe
                   <textarea
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
-                    id="description"
+                    id="1"
                     type="text"
                     rows="4"
                     value={description}
@@ -104,11 +104,11 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                     onChange={(event) => setDescription(event.target.value)}
                   />
                 </label>
-                <label htmlFor="description">
+                <label htmlFor="2">
                   2nd paragraphe
                   <textarea
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
-                    id="description"
+                    id="2"
                     type="text"
                     rows="4"
                     value={description2}
@@ -116,11 +116,11 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                     onChange={(event) => setDescription2(event.target.value)}
                   />
                 </label>
-                <label htmlFor="description">
+                <label htmlFor="3">
                   3eme paragraphe
                   <textarea
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
-                    id="description"
+                    id="d3"
                     type="text"
                     rows="4"
                     value={description3}

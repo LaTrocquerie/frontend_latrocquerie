@@ -92,11 +92,11 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
                 </p>
                 Nouvelle image
                 <ImageUpload />
-                <label htmlFor="description">
+                <label htmlFor="alt">
                   Balise alt pour accessibilité
                   <input
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
-                    id="description"
+                    id="alt"
                     type="text"
                     value={alt}
                     placeholder="décrire succintement l'image, ex: paysage avec plage et palmiers"

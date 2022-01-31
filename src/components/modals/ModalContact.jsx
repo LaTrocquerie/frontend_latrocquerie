@@ -29,7 +29,7 @@ const ModalContact = ({ isShowing, hide, data }) => {
   const onDeleteComponent = () => {
     console.log({
       component: "contact",
-      data: { cls, titre, nom, telephone, email },
+      data: { cls, titre, nom, telephone, email, reseaux },
     });
     hide();
   };

@@ -56,7 +56,7 @@ const echanges = [
     component: "objets",
     data: {
       cls: "p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-gris_clair text-vert",
-      categorie: [
+      details: [
         {
           id: 1,
           appartenance: "Vêtements",

@@ -30,7 +30,8 @@ const ModalProduct = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
-      // titre,
+      titre,
+      cls,
       presentation,
     });
     hide();

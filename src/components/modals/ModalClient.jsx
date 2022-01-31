@@ -10,7 +10,7 @@ const ModalClient = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
-      component: "article",
+      component: "client",
       data: {
         ...data,
         titre,

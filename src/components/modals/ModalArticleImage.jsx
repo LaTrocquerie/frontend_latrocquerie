@@ -13,7 +13,7 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
-      component: "article",
+      component: "articleImage",
       data: {
         ...data,
         cls,

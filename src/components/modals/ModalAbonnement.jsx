@@ -31,7 +31,7 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
-      component: "article",
+      component: "abonnement",
       data: {
         ...data,
         cls,

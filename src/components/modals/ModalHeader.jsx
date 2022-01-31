@@ -23,12 +23,14 @@ const ModalHeader = ({ isShowing, hide, HeaderData }) => {
 
   const onUpdateComponent = () => {
     console.log({
+      component: "header",
       menus,
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
+      component: "header",
       menus,
     });
     hide();

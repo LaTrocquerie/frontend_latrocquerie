@@ -23,21 +23,21 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
+      component: "categorie",
+      cls,
       titre,
       description,
       gommettes,
-      infos,
-      more,
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
+      component: "categorie",
+      cls,
       titre,
       description,
       gommettes,
-      infos,
-      more,
     });
     hide();
   };

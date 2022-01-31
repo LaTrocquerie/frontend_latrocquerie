@@ -21,6 +21,8 @@ const ModalContact = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
+      component: "contact",
+      cls,
       titre,
       nom,
       telephone,
@@ -31,6 +33,8 @@ const ModalContact = ({ isShowing, hide, data }) => {
   };
   const onDeleteComponent = () => {
     console.log({
+      component: "contact",
+      cls,
       titre,
       nom,
       telephone,

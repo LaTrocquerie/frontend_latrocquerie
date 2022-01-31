@@ -25,11 +25,19 @@ const Pages = () => {
       abonnement: () => <Abonnement data={data} key={data.bloc_order} />,
       article: () => <Article data={data} key={data.bloc_order} />,
       articleImage: () => <ArticleImage data={data} key={data.bloc_order} />,
-      product: () => <Product data={data} key={data.bloc_order} />,
+      product: () => (
+        <Product data={data} key={data.bloc_order} component="product" />
+      ),
       categorie: () => <Echanges data={data} key={data.bloc_order} />,
-      objets: () => <Objets data={data} key={data.bloc_order} />,
-      echanges: () => <Echanges data={data} key={data.bloc_order} />,
-      contact: () => <Contact data={data} key={data.bloc_order} />,
+      objets: () => (
+        <Objets data={data} key={data.bloc_order} component="objets" />
+      ),
+      echanges: () => (
+        <Echanges data={data} key={data.bloc_order} component="categorie" />
+      ),
+      contact: () => (
+        <Contact data={data} key={data.bloc_order} component="contact" />
+      ),
       concept: () => <Concept data={data} key={data.bloc_order} />,
       client: () => <Client data={data} key={data.bloc_order} />,
     };

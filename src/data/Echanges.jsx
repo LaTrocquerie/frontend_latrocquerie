@@ -32,7 +32,7 @@ const echanges = [
     data: {
       cls: "p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc",
       titre: "Les différents produits échangeables:",
-      presentation: [
+      details: [
         {
           infos:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sapiente, fugiat ullam quam, dolore at animi excepturi eaque eligendi nostrum quod laboriosam, eius architecto repellat. Eos dicta iure assumenda eveniet?",

@@ -67,11 +67,11 @@ const Footer = () => {
           >
             Victor P.
           </a>
-          <div className="">
-            <Link to="/mentions-legales" target="_blank">
-              Mentions légales
-            </Link>
-          </div>
+        </div>
+        <div className="md:order-last md:basis-full text-mini">
+          <Link to="/mentions-legales" target="_blank">
+            Mentions légales
+          </Link>
         </div>
       </div>
     </div>

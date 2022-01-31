@@ -8,7 +8,10 @@ import ButtonAdmin from "./ButtonAdmin";
  * data se trouvant dans data/Echanges
  * @return {*} un component article sans image avec un ternaire pour afficher ou non les différentes description et bouton
  */
-const Article = ({ data }) => {
+const Article = ({ data, component }) => {
+  console.log(data);
+  console.log(component);
+
   let css = "p-4 md:text-lg gap-3 mx-auto flex items-center flex-col pb-8 ";
   css += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
 

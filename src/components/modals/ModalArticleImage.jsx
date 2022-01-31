@@ -1,7 +1,6 @@
 /* eslint-disable indent */
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import Concept from "../../data/Concept";
 import ImageUpload from "../ImageUpload";
 
 const ModalArticleImage = ({ isShowing, hide, data }) => {
@@ -9,12 +8,20 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
   const [cls, setCls] = useState(data.cls);
   const [titre, setTitre] = useState(data.titre);
   const [alt, setAlt] = useState(data.alt);
+  // const [src, setSrc] = useState(data.src);
   const [description, setDescription] = useState(data.description);
 
   const onUpdateComponent = () => {
     console.log({
-      titre,
-      description,
+      component: "article",
+      data: {
+        ...data,
+        cls,
+        titre,
+        // src,
+        alt,
+        description,
+      },
     });
     hide();
   };
@@ -86,8 +93,8 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
                   image actuelle
                   <img
                     className="w-32 mt-2 mb-4"
-                    src={Concept[4].data.src}
-                    alt={Concept[4].data.alt}
+                    src={data.src}
+                    alt={data.alt}
                   />
                 </p>
                 Nouvelle image

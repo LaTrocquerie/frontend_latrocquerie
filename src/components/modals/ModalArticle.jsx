@@ -4,22 +4,31 @@ import ReactDOM from "react-dom";
 
 const ModalArticle = ({ isShowing, hide, data }) => {
   /* states affichent data actuelle || user input */
-  const [cls, setCls] = useState(data.cls);
   const [titre, setTitre] = useState(data.titre);
   const [description, setDescription] = useState(data.description);
   const [description2, setDescription2] = useState(data.description2);
   const [description3, setDescription3] = useState(data.description3);
-  const [hasBouton, setHasBouton] = useState(data.bouton);
-  const [urlBouton, setUrlBouton] = useState(data.url);
+  const [url, setUrl] = useState(data.url);
+  const [cls, setCls] = useState(data.cls);
+  const [bouton, setBouton] = useState(data.bouton);
+  const [clsBouton, setClsBouton] = useState(data.clsBouton);
+  const [clsCitation, setClsCitation] = useState(data.clsCitation);
 
   const onUpdateComponent = () => {
     console.log({
-      titre,
-      description,
-      description2,
-      description3,
-      hasBouton,
-      urlBouton,
+      component: "article",
+      data: {
+        ...data,
+        titre,
+        description,
+        description2,
+        description3,
+        url,
+        cls,
+        bouton,
+        clsBouton,
+        clsCitation,
+      },
     });
     hide();
   };
@@ -29,8 +38,8 @@ const ModalArticle = ({ isShowing, hide, data }) => {
       description,
       description2,
       description3,
-      hasBouton,
-      urlBouton,
+      bouton,
+      url,
     });
     hide();
   };
@@ -72,7 +81,7 @@ const ModalArticle = ({ isShowing, hide, data }) => {
               {/* // style section interactions utilisateur */}
               <section className="p-2">
                 <label className="flex flex-col" htmlFor="b">
-                  Arrière-plan vert ?
+                  Fond vert ?
                   <input
                     className="w-5 h-5 my-2"
                     id="b"
@@ -135,9 +144,20 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                       className="m-2 w-5 h-5 mb-4"
                       id="b"
                       type="checkbox"
-                      value={hasBouton}
+                      value={bouton}
                       placeholder="texte"
-                      onChange={(event) => setHasBouton(event.target.value)}
+                      onChange={(event) => setBouton(event.target.value)}
+                    />
+                  </label>
+                  <label htmlFor="b">
+                    Bouton sur fond vert ?
+                    <input
+                      className="m-2 w-5 h-5 mb-4"
+                      id="b"
+                      type="checkbox"
+                      value={clsBouton}
+                      placeholder="texte"
+                      onChange={(event) => setClsBouton(event.target.value)}
                     />
                   </label>
                 </div>
@@ -147,9 +167,20 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-2 px-2 w-full"
                     id="btn-url"
                     type="text"
-                    value={urlBouton}
+                    value={url}
                     placeholder="/nom du menu, exemple: /concept pour lien vers page concept"
-                    onChange={(event) => setUrlBouton(event.target.value)}
+                    onChange={(event) => setUrl(event.target.value)}
+                  />
+                </label>
+                <label htmlFor="btn-url">
+                  De type citation ?
+                  <input
+                    className="m-2 w-5 h-5 mb-4"
+                    id="btn-url"
+                    type="checkbox"
+                    value={clsCitation}
+                    placeholder="/nom du menu, exemple: /concept pour lien vers page concept"
+                    onChange={(event) => setClsCitation(event.target.value)}
                   />
                 </label>
               </section>

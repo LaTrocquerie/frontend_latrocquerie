@@ -31,14 +31,20 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
-      titre,
-      details,
-      description,
+      component: "abonnement",
+      data: {
+        ...data,
+        cls,
+        titre,
+        details,
+        description,
+      },
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
+      cls,
       titre,
       details,
       description,

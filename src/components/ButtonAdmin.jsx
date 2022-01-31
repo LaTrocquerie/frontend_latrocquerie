@@ -20,12 +20,18 @@ import HeaderData from "../data/HeaderData";
  * @return {*} un bouton d'administration sur chaque modal appartenant à différents component
  */
 const ButtonAdmin = ({ type, data }) => {
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState("");
+  // const [visible, setVisible] = useState();
+
+  // const toogleVisibility = () => {
+  //   setVisible((prevState) => ({ visible: !prevState.visible }));
+  // };
 
   const toggle = () => {
     setModal("");
   };
   const getModal = () => {
+    console.log(getModal);
     const myModal = {
       article: <ModalArticle isShowing hide={toggle} data={data} />,
       abonnement: <ModalAbonnement isShowing hide={toggle} data={data} />,
@@ -46,6 +52,7 @@ const ButtonAdmin = ({ type, data }) => {
   return (
     <div className="">
       {/* {console.log(modal)} */}
+      {/* {modal ? ( */}
       <button type="submit" onClick={() => getModal()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -61,6 +68,10 @@ const ButtonAdmin = ({ type, data }) => {
           />
         </svg>
       </button>
+      {/* ) : (
+        ""
+      )}
+      {modal} */}
       {modal}
     </div>
   );

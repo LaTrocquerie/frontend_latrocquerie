@@ -4,6 +4,7 @@ import Pages from "./pages/Pages";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import AdminConnection from "./pages/AdminConnection";
+import MentionsLegales from "./pages/MentionsLegales";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<Pages />} />
           <Route path="/:pages" element={<Pages />} />
           <Route path="/testtest" element={<AdminConnection />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
         </Routes>
         <Footer />
       </BrowserRouter>

@@ -5,7 +5,7 @@ const Concept = ({ data }) => {
   // composant concept utlisé pour afficher les 2 citations dans page concept
   return (
     <div className="">
-      <div className={data.cls}>
+      <div className="p-4 md:text-lg gap-3 mx-auto flex items-center flex-col bg-vert text-blanc">
         <div className="text-right w-full">
           <ButtonAdmin type="concept" data={data} />
         </div>

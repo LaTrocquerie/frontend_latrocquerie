@@ -12,7 +12,7 @@ function ImageUpload() {
     dataArray.append("file", uploadFile);
 
     axios
-      .post("process.env.REACT_APP_BACK_END_URL/upload", dataArray)
+      .post("http://localhost:8000/api/upload", dataArray)
       .then((response) => {
         console.log(response);
       })

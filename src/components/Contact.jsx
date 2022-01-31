@@ -12,7 +12,7 @@ const Contact = ({ data }) => {
   return (
     <div>
       <div
-        className={data.cls}
+        className="p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc"
         style={{ backgroundImage: "url(/assets/images/grid.png)" }}
       >
         <div className="text-right w-full">

@@ -50,6 +50,7 @@ const Pages = () => {
         return res.json();
       })
       .then((data) => {
+        console.log(data);
         setPage(data);
       });
   }, [pages]);

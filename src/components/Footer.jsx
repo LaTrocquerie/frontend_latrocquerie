@@ -1,5 +1,6 @@
 import React from "react";
 import { LocationMarkerIcon } from "@heroicons/react/solid";
+import { Link } from "react-router-dom";
 import FooterData from "../data/FooterData";
 import ButtonAdmin from "./ButtonAdmin";
 
@@ -66,6 +67,11 @@ const Footer = () => {
           >
             Victor P.
           </a>
+          <div className="">
+            <Link to="/mentions-legales" target="_blank">
+              Mentions légales
+            </Link>
+          </div>
         </div>
       </div>
     </div>

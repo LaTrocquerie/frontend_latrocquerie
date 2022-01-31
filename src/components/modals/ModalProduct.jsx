@@ -42,18 +42,14 @@ const ModalProduct = ({ isShowing, hide, data }) => {
   const onUpdateComponent = () => {
     console.log({
       component: "product",
-      titre,
-      cls,
-      details,
+      data: { ...data, titre, cls, details },
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
       component: "product",
-      titre,
-      cls,
-      details,
+      data: { ...data, titre, cls, details },
     });
     hide();
   };

@@ -27,7 +27,7 @@ google map interactive
     component: "objets",
     data: {
       cls: "p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc",
-      categorie: [
+      details: [
         {
           id: 1,
           appartenance: "INITIATION AU TROC",

@@ -8,36 +8,30 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
   const [cls, setCls] = useState(data.cls);
   const [titre, setTitre] = useState(data.titre);
   const [description, setDescription] = useState(data.description);
-  const [gommettes, setGommettes] = useState(data.gommettes);
-  const [alt, setAlt] = useState(data.gommettes.alt);
+  const [details, setDetails] = useState(data.details);
+  const [alt, setAlt] = useState(data.details.alt);
   const [infos, setInfos] = useState(data.infos);
   const [more, setMore] = useState(data.more);
 
   const updateGommettes = (value, type, obj) => {
-    const newGommettes = [...gommettes];
+    const newGommettes = [...details];
     const index = newGommettes.indexOf(obj);
     newGommettes[index][type] = value;
-    setGommettes(newGommettes);
+    setDetails(newGommettes);
   };
   console.log(updateGommettes);
 
   const onUpdateComponent = () => {
     console.log({
       component: "categorie",
-      cls,
-      titre,
-      description,
-      gommettes,
+      data: { ...data, titre, description, infos, more, cls, details },
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
       component: "categorie",
-      cls,
-      titre,
-      description,
-      gommettes,
+      data: { ...data, titre, description, infos, more, cls, details },
     });
     hide();
   };
@@ -112,7 +106,7 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
                   />
                 </label>
 
-                {gommettes.map((item) => {
+                {details.map((item) => {
                   return (
                     <div>
                       <p className="">

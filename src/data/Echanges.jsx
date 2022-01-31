@@ -86,7 +86,7 @@ const echanges = [
       description:
         "La valeur des objets n'est pas la même pour tout le monde. La valeur du produit dans la Trocquerie est considérée différement de son prix d'achat. L'idée est de privilégier l'éthique et se détacher de la valeur monétaire et aussi sentimentale de ceux-ci.",
       titre: "Les échanges sont catégorisés par un système de gommettes:",
-      gommettes: [
+      details: [
         {
           id: 1,
           color: "",

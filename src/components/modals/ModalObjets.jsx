@@ -32,14 +32,14 @@ const ModalObjets = ({ isShowing, hide, data }) => {
   const onUpdateComponent = () => {
     console.log({
       component: "objets",
-      data: { details },
+      data: { ...data, cls, details },
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
       component: "objets",
-      data: { details },
+      data: { ...data, cls, details },
     });
     hide();
   };

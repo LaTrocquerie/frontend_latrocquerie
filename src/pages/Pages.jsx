@@ -22,7 +22,6 @@ const Pages = () => {
 
   const getComponent = (type, data) => {
     const component = {
-
       abonnement: () => (
         <Abonnement data={data} key={data.bloc_order} component="abonnement" />
       ),
@@ -46,9 +45,7 @@ const Pages = () => {
         <Objets data={data} key={data.bloc_order} component="objets" />
       ),
       echanges: () => (
-
         <Echanges data={data} key={data.bloc_order} component="categorie" />
-
       ),
       contact: () => (
         <Contact data={data} key={data.bloc_order} component="contact" />
@@ -59,7 +56,6 @@ const Pages = () => {
       client: () => (
         <Client data={data} key={data.bloc_order} component="client" />
       ),
-
     };
     return component[type]();
   };

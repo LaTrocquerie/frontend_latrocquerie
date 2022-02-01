@@ -10,10 +10,13 @@ import ButtonAdmin from "./ButtonAdmin";
  *  * Bouton d'admin joint
  */
 const Product = ({ data }) => {
+  let css =
+    "p-4 md:text-lg gap-3 mx-auto flex items-center flex-col pb-8 bg-vert text-blanc";
+  css += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
   // composant product se trouvant sur la page Echanges
   return (
     <div
-      className="p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc"
+      className={css}
       style={{ backgroundImage: "url(/assets/images/grid.png)" }}
     >
       <div className="text-right w-full">

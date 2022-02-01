@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import ButtonAdmin from "./ButtonAdmin";
+import { AuthContext } from "../contexts/authContext";
 import "../effects.css";
 
 /**
@@ -12,6 +13,8 @@ import "../effects.css";
  * bouton Admin joint
  */
 const Echanges = ({ data }) => {
+  const authContext = useContext(AuthContext);
+
   let css =
     "p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc";
   css += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
@@ -22,7 +25,7 @@ const Echanges = ({ data }) => {
       style={{ backgroundImage: "url(/assets/images/grid.png)" }}
     >
       <div className="text-right w-full">
-        <ButtonAdmin type="echanges" data={data} />
+        {authContext.token && <ButtonAdmin type="echanges" data={data} />}
       </div>
       <div className="md:w-1/2">
         <p className="">{data.description}</p>

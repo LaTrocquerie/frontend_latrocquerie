@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import ButtonAdmin from "./ButtonAdmin";
+import { AuthContext } from "../contexts/authContext";
 
 /**
  *
@@ -11,6 +12,8 @@ import ButtonAdmin from "./ButtonAdmin";
  * @return {*}
  */
 const ArticleImage = ({ data }) => {
+  const authContext = useContext(AuthContext);
+
   let css = "p-4 md:text-lg gap-3 mx-auto flex items-center flex-col pb-8 ";
   css += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
   return (
@@ -20,7 +23,7 @@ const ArticleImage = ({ data }) => {
         style={{ backgroundImage: "url(/assets/images/grid.png)" }}
       >
         <div className="text-right w-full">
-          <ButtonAdmin type="articleImage" data={data} />
+          {authContext.token && <ButtonAdmin type="articleImage" data={data} />}
         </div>
         <h1 className="uppercase text-h1 font-light">{data.titre}</h1>
         <img className="w-32" src={data.src} alt={data.alt} />

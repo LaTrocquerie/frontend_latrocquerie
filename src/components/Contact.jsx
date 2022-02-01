@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import ButtonAdmin from "./ButtonAdmin";
+import { AuthContext } from "../contexts/authContext";
 
 /**
  *
@@ -9,6 +10,8 @@ import ButtonAdmin from "./ButtonAdmin";
  * Bouton admin joint
  */
 const Contact = ({ data }) => {
+  const authContext = useContext(AuthContext);
+
   return (
     <div>
       <div
@@ -16,7 +19,7 @@ const Contact = ({ data }) => {
         style={{ backgroundImage: "url(/assets/images/grid.png)" }}
       >
         <div className="text-right w-full">
-          <ButtonAdmin type="contact" data={data} />
+          {authContext.token && <ButtonAdmin type="contact" data={data} />}
         </div>
         <h1 className="uppercase text-center text-h1 font-light">
           {data.titre}

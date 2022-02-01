@@ -12,10 +12,13 @@ import "../effects.css";
  * bouton Admin joint
  */
 const Echanges = ({ data }) => {
+  let css =
+    "p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc";
+  css += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
   return (
     // composant categorie
     <div
-      className="p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc"
+      className={css}
       style={{ backgroundImage: "url(/assets/images/grid.png)" }}
     >
       <div className="text-right w-full">

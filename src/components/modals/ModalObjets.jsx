@@ -5,39 +5,41 @@ import ReactDOM from "react-dom";
 const ModalObjets = ({ isShowing, hide, data }) => {
   /** state pour changer ou non la valeur des inputs */
   const [cls, setCls] = useState(data.cls);
-  const [categorie, setCategorie] = useState(data.categorie);
+  const [details, setDetails] = useState(data.details);
 
   /* affiche user input */
   const updateCategorie = (value, type, obj) => {
-    const newCategorie = [...categorie];
+    const newCategorie = [...details];
     const index = newCategorie.indexOf(obj);
     newCategorie[index][type] = value;
-    setCategorie(newCategorie);
+    setDetails(newCategorie);
   };
   // /* suppression ciblée avec le bon index */
   const deleteDetail = (obj) => {
-    const newDetails = [...categorie];
+    const newDetails = [...details];
     const index = newDetails.indexOf(obj);
     newDetails.splice(index, 1);
-    setCategorie(newDetails);
+    setDetails(newDetails);
   };
 
   /* ajoute nouveau bloc - push */
   const addDetails = () => {
-    const newDetails = [...categorie];
+    const newDetails = [...details];
     newDetails.push({ appartenance: "", cible: "" });
-    setCategorie(newDetails);
+    setDetails(newDetails);
   };
 
   const onUpdateComponent = () => {
     console.log({
-      categorie,
+      component: "objets",
+      data: { ...data, cls, details },
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
-      categorie,
+      component: "objets",
+      data: { ...data, cls, details },
     });
     hide();
   };
@@ -87,7 +89,7 @@ const ModalObjets = ({ isShowing, hide, data }) => {
                   onChange={(event) => setCls(event.target.value)}
                 />
               </label>
-              {categorie.map((item) => {
+              {details.map((item) => {
                 return (
                   <div>
                     <label htmlFor="1" className="">

@@ -1,6 +1,9 @@
 /* eslint-disable indent */
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { useContext } from "react/cjs/react.development";
+import updateComponent from "../../services/admin";
+import { AuthContext } from "../../contexts/authContext";
 
 const ModalArticle = ({ isShowing, hide, data }) => {
   /* states affichent data actuelle || user input */
@@ -13,9 +16,10 @@ const ModalArticle = ({ isShowing, hide, data }) => {
   const [bouton, setBouton] = useState(data.bouton);
   const [clsBouton, setClsBouton] = useState(data.clsBouton);
   const [clsCitation, setClsCitation] = useState(data.clsCitation);
+  const authContext = useContext(AuthContext);
 
   const onUpdateComponent = () => {
-    console.log({
+    const form = {
       component: "article",
       data: {
         ...data,
@@ -29,8 +33,10 @@ const ModalArticle = ({ isShowing, hide, data }) => {
         clsBouton,
         clsCitation,
       },
+    };
+    updateComponent(form, authContext.token).then((res) => {
+      hide();
     });
-    hide();
   };
   const onDeleteComponent = () => {
     console.log({

@@ -5,8 +5,8 @@ import ButtonAdmin from "./ButtonAdmin";
  *
  *
  * @param {*} { data }
- * data se trouvant dans data/Echanges
- * @return {*} un component article sans image avec un ternaire pour afficher ou non les différentes description et bouton
+ * data se trouvant dans data/home, data/concept, data/abonnement, data/echanges, data/services
+ * @return {*} un component article sans image affichant la data reçue, avec ternaires pour gérer la présence d'un arrière plan gris ou vert, la présence d'un bouton ou non, la présence de style citation ou non.
  */
 const Article = ({ data, component }) => {
   console.log(data);
@@ -36,13 +36,13 @@ const Article = ({ data, component }) => {
       <div
         className={
           data.clsCitation === 1
-            ? "md:w-1/2 uppercase text-[28px] font-light "
-            : "md:w-1/2"
+            ? "flex flex-col gap-3 md:w-1/2 uppercase text-[28px] font-light "
+            : "flex flex-col gap-3 md:w-1/2"
         }
       >
-        <p className="">{data.description}</p>
-        <p className="">{data.description2}</p>
-        <p className="">{data.description3}</p>
+        <p>{data.description}</p>
+        <p>{data.description2}</p>
+        <p>{data.description3}</p>
       </div>
       {data.bouton === 1 ? (
         <a href={data.url}>
@@ -58,5 +58,3 @@ const Article = ({ data, component }) => {
 };
 
 export default Article;
-
-// composant article se retrouvant sur la page des Echanges

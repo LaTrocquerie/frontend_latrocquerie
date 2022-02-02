@@ -23,8 +23,13 @@ const AdminConnection = () => {
     authContext
       .loginUser(email, password)
       .then((res) => {
+        console.log(res);
         if (authContext.email !== "") {
-          navigate(res);
+          const provCookie = `user_token=${res};expires=${new Date(
+            Date.now() + 1000 * 60 * 60 * 4
+          )}`;
+          document.cookie = provCookie;
+          navigate("/");
         } else {
           setMsg(res);
         }

@@ -78,7 +78,7 @@ const ButtonNewsComponent = () => {
     setModal(myModal[type]);
   };
   return (
-    <div className="flex justify-center">
+    <div className="hidden justify-center">
       <select
         className="transition mt-4 text-vert rounded h-8 border-[#0ff] border-2 cursor-pointer px-2 active:translate-y-1"
         onChange={(e) => getModal(e.target.value)}

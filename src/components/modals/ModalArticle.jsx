@@ -35,6 +35,7 @@ const ModalArticle = ({ isShowing, hide, data }) => {
       },
     };
     updateComponent(form, authContext.token).then((res) => {
+      console.log(res);
       hide();
     });
   };

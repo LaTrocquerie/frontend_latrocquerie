@@ -44,10 +44,11 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
       },
     };
     updateComponent(form, authContext.token).then((res) => {
+      console.log(res);
       hide();
     });
   };
-  
+
   // const onDeleteComponent = () => {
   //   console.log({
   //     cls,
@@ -57,7 +58,7 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
   //   });
   //   hide();
   // };
-  
+
   const getModal = () => {
     /** isShowing affiche le modal */
     if (isShowing) {

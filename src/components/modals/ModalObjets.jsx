@@ -15,12 +15,12 @@ const ModalObjets = ({ isShowing, hide, data }) => {
     setDetails(newCategorie);
   };
   // /* suppression ciblée avec le bon index */
-  const deleteDetail = (obj) => {
-    const newDetails = [...details];
-    const index = newDetails.indexOf(obj);
-    newDetails.splice(index, 1);
-    setDetails(newDetails);
-  };
+  // const deleteDetail = (obj) => {
+  //   const newDetails = [...details];
+  //   const index = newDetails.indexOf(obj);
+  //   newDetails.splice(index, 1);
+  //   setDetails(newDetails);
+  // };
 
   /* ajoute nouveau bloc - push */
   const addDetails = () => {
@@ -36,13 +36,13 @@ const ModalObjets = ({ isShowing, hide, data }) => {
     });
     hide();
   };
-  const onDeleteComponent = () => {
-    console.log({
-      component: "objets",
-      data: { ...data, cls, details },
-    });
-    hide();
-  };
+  // const onDeleteComponent = () => {
+  //   console.log({
+  //     component: "objets",
+  //     data: { ...data, cls, details },
+  //   });
+  //   hide();
+  // };
 
   const getModal = () => {
     /** isShowing affiche le modal */
@@ -122,15 +122,6 @@ const ModalObjets = ({ isShowing, hide, data }) => {
                         }
                       />
                     </label>
-                    <section className="flex flex-row-reverse my-2 gap-4 px-2">
-                      <button
-                        className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-[#813]/40 shadow-[10px_10px_0px_0px] shadow-[#813]/50 bg-[#813] text-white px-6 py-2 text-normal"
-                        type="button"
-                        onClick={() => deleteDetail(item)}
-                      >
-                        Supprimer
-                      </button>
-                    </section>
                   </div>
                 );
               })}
@@ -144,14 +135,14 @@ const ModalObjets = ({ isShowing, hide, data }) => {
                 </button>
               </section>
               <section className="flex flex-row-reverse my-2 gap-4 px-2">
-                <button
+                {/* <button
                   className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-[#813]/40 shadow-[10px_10px_0px_0px] shadow-[#813]/50 bg-[#813] text-white px-6 py-2 text-normal"
                   type="button"
                   //  delete => string vide
                   onClick={() => onDeleteComponent()}
                 >
                   Supprimer
-                </button>
+                </button> */}
                 <button
                   className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-vert/40 shadow-[10px_10px_0px_0px] shadow-vert/50 bg-vert text-white px-6 py-2 text-normal"
                   type="button"

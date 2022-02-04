@@ -32,17 +32,17 @@ const ModalArticle = ({ isShowing, hide, data }) => {
     });
     hide();
   };
-  const onDeleteComponent = () => {
-    console.log({
-      titre,
-      description,
-      description2,
-      description3,
-      bouton,
-      url,
-    });
-    hide();
-  };
+  // const onDeleteComponent = () => {
+  //   console.log({
+  //     titre,
+  //     description,
+  //     description2,
+  //     description3,
+  //     bouton,
+  //     url,
+  //   });
+  //   hide();
+  // };
 
   const getModal = () => {
     /** isShowing affiche le modal */
@@ -186,14 +186,14 @@ const ModalArticle = ({ isShowing, hide, data }) => {
               </section>
               {/* ////////////////////////////// boutons de validation et suppression */}
               <section className="flex flex-row-reverse my-2 gap-4 px-2">
-                <button
+                {/* <button
                   className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-[#813]/40 shadow-[10px_10px_0px_0px] shadow-[#813]/50 bg-[#813] text-white px-6 py-2 text-normal"
                   type="button"
                   //  delete => string vide
                   onClick={() => onDeleteComponent()}
                 >
                   Supprimer
-                </button>
+                </button> */}
                 <button
                   className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-vert/40 shadow-[10px_10px_0px_0px] shadow-vert/50 bg-vert text-white px-6 py-2 text-normal"
                   type="button"

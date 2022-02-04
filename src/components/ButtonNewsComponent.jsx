@@ -9,7 +9,6 @@ import ModalEchanges from "./modals/ModalEchanges";
 import ModalObjets from "./modals/ModalObjets";
 import ModalProduct from "./modals/ModalProduct";
 import ModalClient from "./modals/ModalClient";
-import ModalConcept from "./modals/ModalConcept";
 import ModalNewComponent from "./modals/ModalNewComponent";
 
 const ButtonNewsComponent = () => {
@@ -27,7 +26,6 @@ const ButtonNewsComponent = () => {
           isShowing
           hide={toggle}
           data={{
-            titre: "",
             details: [{ detail: "", description1: "", description2: "" }],
             description: "",
           }}
@@ -48,7 +46,7 @@ const ButtonNewsComponent = () => {
           isShowing
           hide={toggle}
           data={{
-            gommettes: [{ src: "", alt: "" }],
+            details: [{ src: "", alt: "" }],
           }}
         />
       ),
@@ -64,18 +62,17 @@ const ButtonNewsComponent = () => {
         <ModalObjets
           isShowing
           hide={toggle}
-          data={{ categorie: [{ appartenance: "", cible: "" }] }}
+          data={{ details: [{ appartenance: "", cible: "" }] }}
         />
       ),
       product: (
         <ModalProduct
           isShowing
           hide={toggle}
-          data={{ presentation: [{ info: "", src: "" }] }}
+          data={{ details: [{ infos: "", src: "", alt: "" }] }}
         />
       ),
       client: <ModalClient isShowing hide={toggle} data={{}} />,
-      concept: <ModalConcept isShowing hide={toggle} data={{}} />,
       newComponent: <ModalNewComponent isShowing hide={toggle} data={{}} />,
     };
     setModal(myModal[type]);
@@ -90,7 +87,6 @@ const ButtonNewsComponent = () => {
         <option value="article">Article</option>
         <option value="articleImage">Article avec Image</option>
         <option value="client">Client</option>
-        <option value="concept">Concept</option>
         <option value="contact">Contact</option>
         <option value="echanges">Echanges</option>
         <option value="product">Produits échangeables</option>

@@ -21,20 +21,15 @@ const ModalContact = ({ isShowing, hide, data }) => {
 
   const onUpdateComponent = () => {
     console.log({
-      titre,
-      nom,
-      telephone,
-      email,
-      reseaux,
+      component: "contact",
+      data: { cls, titre, nom, telephone, email, reseaux },
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
-      titre,
-      nom,
-      telephone,
-      email,
+      component: "contact",
+      data: { cls, titre, nom, telephone, email, reseaux },
     });
     hide();
   };
@@ -95,10 +90,10 @@ const ModalContact = ({ isShowing, hide, data }) => {
                     onChange={(event) => setTitre(event.target.value)}
                   />
                 </label>
-                <label htmlFor="titre">
+                <label htmlFor="nom">
                   Nom
                   <input
-                    id="titre"
+                    id="nom"
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                     type="text"
                     value={nom}
@@ -132,14 +127,14 @@ const ModalContact = ({ isShowing, hide, data }) => {
                 {reseaux.map((item) => {
                   return (
                     <div>
-                      <label htmlFor="1" className="">
+                      <label htmlFor="url" className="">
                         réseau social
                         <input
-                          id="1"
+                          id="url"
                           className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                           type="text"
                           value={item.url}
-                          placeholder=""
+                          placeholder="adresse du réseau"
                           onChange={(event) =>
                             updateReseaux(event.target.value, "url", item)
                           }

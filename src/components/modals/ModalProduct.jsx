@@ -6,39 +6,50 @@ const ModalProduct = ({ isShowing, hide, data }) => {
   /** state pour changer ou non la valeur des inputs */
   const [cls, setCls] = useState(data.cls);
   const [titre, setTitre] = useState(data.titre);
-  const [presentation, setPresentation] = useState(data.presentation);
-  const [alt, setAlt] = useState(data.presentation.alt);
+  const [details, setDetails] = useState(data.details);
 
+  /**
+   * Fonction de mise à jour de details
+   * @param {objet} value
+   * @param {objet} type
+   * @param {objet} obj
+   */
   const updateDetail = (value, type, obj) => {
-    const newPresentation = [...presentation];
+    const newPresentation = [...details];
     const index = newPresentation.indexOf(obj);
     newPresentation[index][type] = value;
-    setPresentation(newPresentation);
+    setDetails(newPresentation);
   };
+  /**
+   * Fonction de suppression
+   * @param {objet} obj
+   */
   const deleteDetail = (obj) => {
-    const newPresentation = [...presentation];
+    const newPresentation = [...details];
     const index = newPresentation.indexOf(obj);
     newPresentation.splice(index, 1);
-    setPresentation(newPresentation);
+    setDetails(newPresentation);
   };
-  /* ajoute nouveau bloc - push */
+  /**
+   *
+   */
   const addPresentation = () => {
-    const newPresentation = [...presentation];
+    const newPresentation = [...details];
     newPresentation.push({ infos: "", src: "" });
-    setPresentation(newPresentation);
+    setDetails(newPresentation);
   };
 
   const onUpdateComponent = () => {
     console.log({
-      // titre,
-      presentation,
+      component: "product",
+      data: { ...data, titre, cls, details },
     });
     hide();
   };
   const onDeleteComponent = () => {
     console.log({
-      // titre,
-      presentation,
+      component: "product",
+      data: { ...data, titre, cls, details },
     });
     hide();
   };
@@ -99,7 +110,7 @@ const ModalProduct = ({ isShowing, hide, data }) => {
                   onChange={(event) => setTitre(event.target.value)}
                 />
               </label>
-              {presentation.map((item) => {
+              {details.map((item) => {
                 return (
                   <div>
                     <label htmlFor="infos" className="">
@@ -138,9 +149,9 @@ const ModalProduct = ({ isShowing, hide, data }) => {
                         className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                         id="description"
                         type="text"
-                        value={alt}
+                        value={details.alt}
                         placeholder="décrire succintement l'image, ex: paysage avec plage et palmiers"
-                        onChange={(event) => setAlt(event.target.value)}
+                        onChange={(event) => setDetails(event.target.value)}
                       />
                     </label>
                     <section className="flex flex-row-reverse my-2 gap-4 px-2">

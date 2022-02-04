@@ -1,45 +1,57 @@
+import React, { useContext } from "react";
 import React from "react";
+import { Link } from "react-router-dom";
 import ButtonAdmin from "./ButtonAdmin";
+import { AuthContext } from "../contexts/authContext";
 
 /**
  *
  *
  * @param {*} { data }
- * data se trouvant dans data/Echanges
- * @return {*} un component article sans image avec un ternaire pour afficher ou non les différentes description et bouton
+ * data se trouvant dans data/home, data/concept, data/abonnement, data/echanges, data/services
+ * @return {*} un component article sans image affichant la data reçue, avec ternaires pour gérer la présence d'un arrière plan gris ou vert, la présence d'un bouton ou non, la présence de style citation ou non.
  */
 const Article = ({ data }) => {
-  let css = "p-4 md:text-lg gap-3 mx-auto flex items-center flex-col pb-8 ";
-  css += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
+  const authContext = useContext(AuthContext);
+
+  let bgCss = "p-4 md:text-lg gap-3 mx-auto flex items-center flex-col pb-8 ";
+  bgCss += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
+
+  let btnCss =
+    "transition active:-skew-y-6 active:translate-y-1  px-6 py-2 shadow-[10px_10px_0px_0px] hover:bg-rose hover:text-vert bg-vert text-white ";
+  btnCss +=
+    data.cls === 1
+      ? "active:shadow-vert/40 shadow-vert/50"
+      : "hover:border-rose shadow-blanc/30 active:shadow-blanc/20 border-blanc border-2";
 
   return (
     <div
-      className={css}
+      className={bgCss}
       style={{ backgroundImage: "url(/assets/images/grid.png)" }}
     >
       <div className="text-right w-full">
-        <ButtonAdmin type="article" data={data} />
+        {authContext.token && <ButtonAdmin type="article" data={data} />}
       </div>
       <h1 className="uppercase text-h1 font-light leading-tight">
         {data.titre}
       </h1>
-      <p className="md:w-1/2">{data.description}</p>
-      <p className="md:w-1/2">{data.description2}</p>
-      <p className="md:w-1/2">{data.description3}</p>
-
+      <div
+        className={
+          data.clsCitation === 1
+            ? "flex flex-col gap-3 md:w-1/2 uppercase text-[28px] font-light "
+            : "flex flex-col gap-3 md:w-1/2"
+        }
+      >
+        <p>{data.description}</p>
+        <p>{data.description2}</p>
+        <p>{data.description3}</p>
+      </div>
       {data.bouton === 1 ? (
-        <a href={data.url}>
-          <button
-            className={
-              data.clsBouton === 1
-                ? "transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-vert/40 shadow-[10px_10px_0px_0px] shadow-vert/50 bg-vert text-white px-6 py-2 "
-                : "transition hover:bg-rose hover:text-vert hover:border-rose active:-skew-y-6 active:translate-y-1 shadow-blanc/30 shadow-[10px_10px_0px_0px] active:shadow-blanc/20 bg-vert border-blanc border-2 text-blanc px-6 py-2 text-normal mt-5"
-            }
-            type="submit"
-          >
+        <Link to={data.url}>
+          <button className={btnCss} type="submit">
             En savoir plus
           </button>
-        </a>
+        </Link>
       ) : (
         ""
       )}
@@ -48,5 +60,3 @@ const Article = ({ data }) => {
 };
 
 export default Article;
-
-// composant article se retrouvant sur la page des Echanges

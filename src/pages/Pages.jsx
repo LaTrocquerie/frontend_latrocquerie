@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../contexts/authContext";
 
 // components
 import Abonnement from "../components/Abonnement";
@@ -17,21 +18,46 @@ const Pages = () => {
   const [page, setPage] = useState({
     components: [],
   });
+  const authContext = useContext(AuthContext);
 
   const { pages } = useParams();
 
   const getComponent = (type, data) => {
     const component = {
-      abonnement: () => <Abonnement data={data} key={data.bloc_order} />,
-      article: () => <Article data={data} key={data.bloc_order} />,
-      articleImage: () => <ArticleImage data={data} key={data.bloc_order} />,
-      product: () => <Product data={data} key={data.bloc_order} />,
-      categorie: () => <Echanges data={data} key={data.bloc_order} />,
-      objets: () => <Objets data={data} key={data.bloc_order} />,
-      echanges: () => <Echanges data={data} key={data.bloc_order} />,
-      contact: () => <Contact data={data} key={data.bloc_order} />,
-      concept: () => <Concept data={data} key={data.bloc_order} />,
-      client: () => <Client data={data} key={data.bloc_order} />,
+      abonnement: () => (
+        <Abonnement data={data} key={data.bloc_order} component="abonnement" />
+      ),
+      article: () => (
+        <Article data={data} key={data.bloc_order} component="article" />
+      ),
+      articleImage: () => (
+        <ArticleImage
+          data={data}
+          key={data.bloc_order}
+          component="articleImage"
+        />
+      ),
+      product: () => (
+        <Product data={data} key={data.bloc_order} component="product" />
+      ),
+      categorie: () => (
+        <Echanges data={data} key={data.bloc_order} component="categorie" />
+      ),
+      objets: () => (
+        <Objets data={data} key={data.bloc_order} component="objets" />
+      ),
+      echanges: () => (
+        <Echanges data={data} key={data.bloc_order} component="categorie" />
+      ),
+      contact: () => (
+        <Contact data={data} key={data.bloc_order} component="contact" />
+      ),
+      concept: () => (
+        <Concept data={data} key={data.bloc_order} component="concept" />
+      ),
+      client: () => (
+        <Client data={data} key={data.bloc_order} component="client" />
+      ),
     };
     return component[type]();
   };
@@ -57,7 +83,7 @@ const Pages = () => {
   return (
     <div>
       {page && <div>{createComponent()}</div>}
-      <ButtonNewsComponent />
+      {authContext.token && <ButtonNewsComponent />}
     </div>
   );
 };

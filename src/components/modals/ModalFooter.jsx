@@ -4,8 +4,8 @@ import FooterData from "../../data/FooterData";
 
 const ModalFooter = ({ isShowing, hide }) => {
   /** state qui est en lien avec la data de footer pour l'afficher */
-  const [mail, setMail] = useState(FooterData.contact[0].mail);
-  const [phone, setPhone] = useState(FooterData.contact[1].phone);
+  const [mail, setMail] = useState(FooterData.contact.mail);
+  const [phone, setPhone] = useState(FooterData.contact.phone);
   const [adresse, setAdresse] = useState(FooterData.adresse);
   const [copyright, setCopyright] = useState(FooterData.copyright);
 

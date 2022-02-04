@@ -32,7 +32,7 @@ const echanges = [
     data: {
       cls: "p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-vert text-blanc",
       titre: "Les différents produits échangeables:",
-      presentation: [
+      details: [
         {
           infos:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sapiente, fugiat ullam quam, dolore at animi excepturi eaque eligendi nostrum quod laboriosam, eius architecto repellat. Eos dicta iure assumenda eveniet?",
@@ -56,7 +56,7 @@ const echanges = [
     component: "objets",
     data: {
       cls: "p-4 md:text-lg gap-3 mx-auto  flex items-center flex-col bg-gris_clair text-vert",
-      categorie: [
+      details: [
         {
           id: 1,
           appartenance: "Vêtements",
@@ -86,7 +86,7 @@ const echanges = [
       description:
         "La valeur des objets n'est pas la même pour tout le monde. La valeur du produit dans la Trocquerie est considérée différement de son prix d'achat. L'idée est de privilégier l'éthique et se détacher de la valeur monétaire et aussi sentimentale de ceux-ci.",
       titre: "Les échanges sont catégorisés par un système de gommettes:",
-      gommettes: [
+      details: [
         {
           id: 1,
           color: "",

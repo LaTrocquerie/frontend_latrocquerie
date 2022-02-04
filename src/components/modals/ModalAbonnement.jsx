@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
+import updateComponent from "../../services/admin";
+import { AuthContext } from "../../contexts/authContext";
 
 const ModalAbonnement = ({ isShowing, hide, data }) => {
   /* states affichent data */
@@ -7,6 +9,7 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
   const [titre, setTitre] = useState(data.titre);
   const [details, setDetails] = useState(data.details);
   const [description, setDescription] = useState(data.description);
+  const authContext = useContext(AuthContext);
 
   /* affiche user input */
   const updateDetail = (value, type, obj) => {
@@ -30,15 +33,24 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
   };
 
   const onUpdateComponent = () => {
-    console.log({
-      titre,
-      details,
-      description,
+    const form = {
+      component: "abonnement",
+      data: {
+        ...data,
+        cls,
+        titre,
+        details,
+        description,
+      },
+    };
+    updateComponent(form, authContext.token).then((res) => {
+      hide();
     });
-    hide();
   };
+
   const onDeleteComponent = () => {
     console.log({
+      cls,
       titre,
       details,
       description,

@@ -1,6 +1,8 @@
+import React, { useContext } from "react";
 import React from "react";
 import { Link } from "react-router-dom";
 import ButtonAdmin from "./ButtonAdmin";
+import { AuthContext } from "../contexts/authContext";
 
 /**
  *
@@ -9,9 +11,8 @@ import ButtonAdmin from "./ButtonAdmin";
  * data se trouvant dans data/home, data/concept, data/abonnement, data/echanges, data/services
  * @return {*} un component article sans image affichant la data reçue, avec ternaires pour gérer la présence d'un arrière plan gris ou vert, la présence d'un bouton ou non, la présence de style citation ou non.
  */
-const Article = ({ data, component }) => {
-  console.log(data);
-  console.log(component);
+const Article = ({ data }) => {
+  const authContext = useContext(AuthContext);
 
   let bgCss = "p-4 md:text-lg gap-3 mx-auto flex items-center flex-col pb-8 ";
   bgCss += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
@@ -29,7 +30,7 @@ const Article = ({ data, component }) => {
       style={{ backgroundImage: "url(/assets/images/grid.png)" }}
     >
       <div className="text-right w-full">
-        <ButtonAdmin type="article" data={data} />
+        {authContext.token && <ButtonAdmin type="article" data={data} />}
       </div>
       <h1 className="uppercase text-h1 font-light leading-tight">
         {data.titre}

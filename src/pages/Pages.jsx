@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
+import { AuthContext } from "../contexts/authContext";
 
 // components
 import Abonnement from "../components/Abonnement";
@@ -17,6 +18,7 @@ const Pages = () => {
   const [page, setPage] = useState({
     components: [],
   });
+  const authContext = useContext(AuthContext);
 
   const { pages } = useParams();
 
@@ -81,7 +83,7 @@ const Pages = () => {
   return (
     <div>
       {page && <div>{createComponent()}</div>}
-      <ButtonNewsComponent />
+      {authContext.token && <ButtonNewsComponent />}
     </div>
   );
 };

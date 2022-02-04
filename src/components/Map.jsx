@@ -3,10 +3,7 @@ import React from "react";
 /* iframe de la google map */
 const Map = () => {
   return (
-    <div
-      className="bg-gris_clair"
-      style={{ backgroundImage: "url(/assets/images/grid.png)" }}
-    >
+    <div>
       <iframe
         className="md:max-w-2xl mx-auto border-0 w-full h-96 py-4"
         title="map"

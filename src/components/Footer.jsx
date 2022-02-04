@@ -49,27 +49,38 @@ const Footer = () => {
           <a
             className="px-2 underline"
             href="https://github.com/Francois-Chatelier"
+            target="_blank"
+            rel="noreferrer"
           >
             François C.
           </a>
           <a
             className="px-2  underline"
             href="https://github.com/maxime-baillon"
+            target="_blank"
+            rel="noreferrer"
           >
             Maxime B.
           </a>
-          <a className="px-2  underline" href="https://github.com/anarkhya">
+          <a
+            className="px-2  underline"
+            href="https://github.com/anarkhya"
+            target="_blank"
+            rel="noreferrer"
+          >
             Greg N.
           </a>
           <a
             className="px-2  underline"
             href="https://github.com/VictorPagnier"
+            target="_blank"
+            rel="noreferrer"
           >
             Victor P.
           </a>
         </div>
         <div className="md:order-last md:basis-full text-mini">
-          <Link to="/mentions-legales" target="_blank">
+          <Link to="/mentions-legales" target="_blank" rel="noreferrer">
             Mentions légales
           </Link>
         </div>

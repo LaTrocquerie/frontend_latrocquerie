@@ -1,16 +1,18 @@
+import React, { useContext } from "react";
 import React from "react";
+import { Link } from "react-router-dom";
 import ButtonAdmin from "./ButtonAdmin";
+import { AuthContext } from "../contexts/authContext";
 
 /**
  *
  *
  * @param {*} { data }
- * data se trouvant dans data/Echanges
- * @return {*} un component article sans image avec un ternaire pour afficher ou non les différentes description et bouton
+ * data se trouvant dans data/home, data/concept, data/abonnement, data/echanges, data/services
+ * @return {*} un component article sans image affichant la data reçue, avec ternaires pour gérer la présence d'un arrière plan gris ou vert, la présence d'un bouton ou non, la présence de style citation ou non.
  */
-const Article = ({ data, component }) => {
-  console.log(data);
-  console.log(component);
+const Article = ({ data }) => {
+  const authContext = useContext(AuthContext);
 
   let bgCss = "p-4 md:text-lg gap-3 mx-auto flex items-center flex-col pb-8 ";
   bgCss += data.cls === 1 ? "bg-gris_clair text-vert" : "bg-vert text-blanc";
@@ -28,7 +30,7 @@ const Article = ({ data, component }) => {
       style={{ backgroundImage: "url(/assets/images/grid.png)" }}
     >
       <div className="text-right w-full">
-        <ButtonAdmin type="article" data={data} />
+        {authContext.token && <ButtonAdmin type="article" data={data} />}
       </div>
       <h1 className="uppercase text-h1 font-light leading-tight">
         {data.titre}
@@ -36,20 +38,20 @@ const Article = ({ data, component }) => {
       <div
         className={
           data.clsCitation === 1
-            ? "md:w-1/2 uppercase text-[28px] font-light "
-            : "md:w-1/2"
+            ? "flex flex-col gap-3 md:w-1/2 uppercase text-[28px] font-light "
+            : "flex flex-col gap-3 md:w-1/2"
         }
       >
-        <p className="">{data.description}</p>
-        <p className="">{data.description2}</p>
-        <p className="">{data.description3}</p>
+        <p>{data.description}</p>
+        <p>{data.description2}</p>
+        <p>{data.description3}</p>
       </div>
       {data.bouton === 1 ? (
-        <a href={data.url}>
+        <Link to={data.url}>
           <button className={btnCss} type="submit">
             En savoir plus
           </button>
-        </a>
+        </Link>
       ) : (
         ""
       )}
@@ -58,5 +60,3 @@ const Article = ({ data, component }) => {
 };
 
 export default Article;
-
-// composant article se retrouvant sur la page des Echanges

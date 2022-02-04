@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LocationMarkerIcon } from "@heroicons/react/solid";
 import { Link } from "react-router-dom";
 import FooterData from "../data/FooterData";
 import ButtonAdmin from "./ButtonAdmin";
+import { AuthContext } from "../contexts/authContext";
 
 /**
  *
@@ -13,10 +14,12 @@ import ButtonAdmin from "./ButtonAdmin";
  * Bouton Admin joint
  */
 const Footer = () => {
+  const authContext = useContext(AuthContext);
+
   return (
     <div className={FooterData.cls}>
       <div className="flex justify-end pr-4 pt-4">
-        <ButtonAdmin type="footer" />
+        {authContext.token && <ButtonAdmin type="footer" />}
       </div>
       <div className="py-4 flex flex-col items-center md:flex-row md:flex-wrap md:gap-0 text-center text-vert gap-5">
         <div className="md:order-1 md:basis-1/3 list-none">
@@ -49,26 +52,37 @@ const Footer = () => {
           <a
             className="px-2 underline"
             href="https://github.com/Francois-Chatelier"
+            target="_blank"
+            rel="noreferrer"
           >
             François C.
           </a>
           <a
             className="px-2  underline"
             href="https://github.com/maxime-baillon"
+            target="_blank"
+            rel="noreferrer"
           >
             Maxime B.
           </a>
-          <a className="px-2  underline" href="https://github.com/anarkhya">
+          <a
+            className="px-2  underline"
+            href="https://github.com/anarkhya"
+            target="_blank"
+            rel="noreferrer"
+          >
             Greg N.
           </a>
           <a
             className="px-2  underline"
             href="https://github.com/VictorPagnier"
+            target="_blank"
+            rel="noreferrer"
           >
             Victor P.
           </a>
           <div className="">
-            <Link to="/mentions-legales" target="_blank">
+            <Link to="/mentions-legales" target="_blank" rel="noreferrer">
               Mentions légales
             </Link>
           </div>

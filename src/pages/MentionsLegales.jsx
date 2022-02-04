@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * contenu des mentions légales
+ * @returns
+ */
 const MentionsLegales = () => {
   return (
     <>

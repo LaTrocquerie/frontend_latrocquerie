@@ -1,4 +1,6 @@
 import React, { useContext } from "react";
+import React from "react";
+import { Link } from "react-router-dom";
 import ButtonAdmin from "./ButtonAdmin";
 import { AuthContext } from "../contexts/authContext";
 
@@ -45,11 +47,11 @@ const Article = ({ data }) => {
         <p>{data.description3}</p>
       </div>
       {data.bouton === 1 ? (
-        <a href={data.url}>
+        <Link to={data.url}>
           <button className={btnCss} type="submit">
             En savoir plus
           </button>
-        </a>
+        </Link>
       ) : (
         ""
       )}

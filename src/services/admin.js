@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const updateComponent = (data, token) => {
-  console.log(data);
   return axios
     .put(
       `${process.env.REACT_APP_BACK_END_URL}api/pages/component`,

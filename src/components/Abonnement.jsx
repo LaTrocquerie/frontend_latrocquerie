@@ -30,7 +30,7 @@ const Abonnement = ({ data }) => {
         <br />
         <div className="md:w-1/2">
           {data.details.map((detail) => (
-            <p className="uppercase font-bold text-h2">
+            <div className="uppercase font-bold text-h2" key={detail.detail}>
               {detail.detail}
               <p className="normal-case font-regular text-normal">
                 {detail.description1}
@@ -39,7 +39,7 @@ const Abonnement = ({ data }) => {
                 {detail.description2}
               </p>
               <br />
-            </p>
+            </div>
           ))}
           <p className="normal-case text-mini font-regular">
             {data.description}

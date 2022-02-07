@@ -18,13 +18,7 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
     newDetails[index][type] = value;
     setDetails(newDetails);
   };
-  /* suppression ciblée avec le bon index - splice */
-  // const deleteDetail = (obj) => {
-  //   const newDetails = [...details];
-  //   const index = newDetails.indexOf(obj);
-  //   newDetails.splice(index, 1);
-  //   setDetails(newDetails);
-  // };
+
   /* ajoute nouveau bloc - push */
   const addDetails = () => {
     const newDetails = [...details];
@@ -43,21 +37,10 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
         description,
       },
     };
-    updateComponent(form, authContext.token).then((res) => {
-      console.log(res);
+    updateComponent(form, authContext.token).then(() => {
       hide();
     });
   };
-
-  // const onDeleteComponent = () => {
-  //   console.log({
-  //     cls,
-  //     titre,
-  //     details,
-  //     description,
-  //   });
-  //   hide();
-  // };
 
   const getModal = () => {
     /** isShowing affiche le modal */

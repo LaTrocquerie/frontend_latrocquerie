@@ -32,8 +32,8 @@ const Echanges = ({ data }) => {
         <h2 className="text-center mt-4">{data.titre}</h2>
         <section className="flex justify-center gap-4 mt-4">
           {data.details.map((gommette) => (
-            <section>
-              <div key={gommette.id}>
+            <section key={gommette.id_gommettes}>
+              <div>
                 <img
                   className="blob w-16 h-16"
                   src={gommette.src}

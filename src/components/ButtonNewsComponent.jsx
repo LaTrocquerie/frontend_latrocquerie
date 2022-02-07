@@ -18,7 +18,6 @@ const ButtonNewsComponent = () => {
     setModal("");
   };
   const getModal = (type) => {
-    console.log("getModal");
     const myModal = {
       article: <ModalArticle isShowing hide={toggle} data={{}} />,
       abonnement: (

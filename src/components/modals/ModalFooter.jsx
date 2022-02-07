@@ -18,21 +18,6 @@ const ModalFooter = ({ isShowing, hide }) => {
     setDataHoraires(newData);
   };
 
-  // const [details, setDetails] = useState([]);
-
-  // const onChangeDetails = (value, detail) => {
-  //   const newDetails = [...details];
-  //   const index = newDetails.indexOf(detail);
-  //   newDetails[index] = value;
-  //   setDetails(newDetails);
-  // };
-
-  // const addDetails = () => {
-  //   const newDetails = [...details];
-  //   newDetails.push("");
-  //   setDetails(newDetails);
-  // };
-
   const getModal = () => {
     /** isShowing affiche le modal */
     if (isShowing) {

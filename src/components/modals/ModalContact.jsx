@@ -20,19 +20,8 @@ const ModalContact = ({ isShowing, hide, data }) => {
   };
 
   const onUpdateComponent = () => {
-    console.log({
-      component: "contact",
-      data: { cls, titre, nom, telephone, email, reseaux },
-    });
     hide();
   };
-  // const onDeleteComponent = () => {
-  //   console.log({
-  //     component: "contact",
-  //     data: { cls, titre, nom, telephone, email, reseaux },
-  //   });
-  //   hide();
-  // };
 
   const getModal = () => {
     /** isShowing affiche le modal */
@@ -145,14 +134,6 @@ const ModalContact = ({ isShowing, hide, data }) => {
                 })}
                 {/* ////////////////////////////// boutons de validation et suppression */}
                 <section className="flex flex-row-reverse my-2 gap-4 px-2">
-                  {/* <button
-                    className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-[#813]/40 shadow-[10px_10px_0px_0px] shadow-[#813]/50 bg-[#813] text-white px-6 py-2 text-normal"
-                    type="button"
-                    //  delete => string vide
-                    onClick={() => onDeleteComponent()}
-                  >
-                    Supprimer
-                  </button> */}
                   <button
                     className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-vert/40 shadow-[10px_10px_0px_0px] shadow-vert/50 bg-vert text-white px-6 py-2 text-normal"
                     type="button"

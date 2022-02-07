@@ -9,32 +9,19 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
   const [titre, setTitre] = useState(data.titre);
   const [description, setDescription] = useState(data.description);
   const [details, setDetails] = useState(data.details);
-  const [alt, setAlt] = useState(data.details.alt);
   const [infos, setInfos] = useState(data.infos);
   const [more, setMore] = useState(data.more);
 
-  const updateGommettes = (value, type, obj) => {
-    const newGommettes = [...details];
-    const index = newGommettes.indexOf(obj);
-    newGommettes[index][type] = value;
-    setDetails(newGommettes);
-  };
-  console.log(updateGommettes);
-
   const onUpdateComponent = () => {
-    console.log({
-      component: "categorie",
-      data: { ...data, titre, description, infos, more, cls, details },
-    });
     hide();
   };
-  // const onDeleteComponent = () => {
-  //   console.log({
-  //     component: "categorie",
-  //     data: { ...data, titre, description, infos, more, cls, details },
-  //   });
-  //   hide();
-  // };
+
+  const updateDetail = (value, type, obj) => {
+    const newDetails = [...details];
+    const index = newDetails.indexOf(obj);
+    newDetails[index][type] = value;
+    setDetails(newDetails);
+  };
 
   const getModal = () => {
     /** isShowing affiche le modal */
@@ -82,7 +69,7 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
                     onChange={(event) => setCls(event.target.value)}
                   />
                 </label>
-                <label htmlFor="titre" className="">
+                <label htmlFor="titre">
                   paragraphe
                   <textarea
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
@@ -109,7 +96,7 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
                 {details.map((item) => {
                   return (
                     <div>
-                      <p className="">
+                      <p>
                         gommette actuelle
                         <img
                           className="blob w-16 h-16"
@@ -117,7 +104,7 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
                           alt={item.alt}
                         />
                       </p>
-                      <label htmlFor="nom" className="">
+                      <label htmlFor="nom">
                         nouvelle gommette
                         <input
                           id="file"
@@ -131,15 +118,17 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
                           className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                           id="description"
                           type="text"
-                          value={alt}
+                          value={item.alt}
                           placeholder="décrire succintement l'image, ex: paysage avec plage et palmiers"
-                          onChange={(event) => setAlt(event.target.value)}
+                          onChange={(event) =>
+                            updateDetail(event.target.value, "alt", item)
+                          }
                         />
                       </label>
                     </div>
                   );
                 })}
-                <label htmlFor="titre" className="">
+                <label htmlFor="titre">
                   Texte
                   <textarea
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
@@ -151,7 +140,7 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
                     onChange={(event) => setInfos(event.target.value)}
                   />
                 </label>
-                <label htmlFor="titre" className="">
+                <label htmlFor="titre">
                   mini texte
                   <input
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
@@ -165,14 +154,6 @@ const ModalEchanges = ({ isShowing, hide, data }) => {
                 </label>
                 {/* ////////////////////////////// boutons de validation et suppression */}
                 <section className="flex flex-row-reverse my-2 gap-4 px-2">
-                  {/* <button
-                    className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-[#813]/40 shadow-[10px_10px_0px_0px] shadow-[#813]/50 bg-[#813] text-white px-6 py-2 text-normal"
-                    type="button"
-                    //  delete => string vide
-                    onClick={() => onDeleteComponent()}
-                  >
-                    Supprimer
-                  </button> */}
                   <button
                     className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-vert/40 shadow-[10px_10px_0px_0px] shadow-vert/50 bg-vert text-white px-6 py-2 text-normal"
                     type="button"

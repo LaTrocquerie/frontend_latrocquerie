@@ -51,14 +51,12 @@ const Header = () => {
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-14">
                     {HeaderData.menus.map((item) => (
-                      <Link to={item.to}>
-                        <a
-                          key={item.name}
-                          href={item.to}
-                          className="transition hover:text-rose text-h2 text-vert"
-                        >
-                          {item.name}
-                        </a>
+                      <Link
+                        to={item.to}
+                        key={item.name}
+                        className="transition hover:text-rose text-h2 text-vert"
+                      >
+                        {item.name}
                       </Link>
                     ))}
                   </div>
@@ -70,11 +68,8 @@ const Header = () => {
           <Disclosure.Panel className="sm:hidden">
             <div className="bg-vert flex flex-col p-4 gap-8">
               {HeaderData.menus.map((item) => (
-                <Link to={item.to}>
-                  <Disclosure.Button
-                    key={item.name}
-                    className="text-h2 text-blanc"
-                  >
+                <Link to={item.to} key={item.name}>
+                  <Disclosure.Button className="text-h2 text-blanc">
                     {item.name}
                   </Disclosure.Button>
                 </Link>

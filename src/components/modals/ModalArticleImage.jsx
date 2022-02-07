@@ -8,30 +8,11 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
   const [cls, setCls] = useState(data.cls);
   const [titre, setTitre] = useState(data.titre);
   const [alt, setAlt] = useState(data.alt);
-  // const [src, setSrc] = useState(data.src);
   const [description, setDescription] = useState(data.description);
 
   const onUpdateComponent = () => {
-    console.log({
-      component: "articleImage",
-      data: {
-        ...data,
-        cls,
-        titre,
-        // src,
-        alt,
-        description,
-      },
-    });
     hide();
   };
-  // const onDeleteComponent = () => {
-  //   console.log({
-  //     titre,
-  //     description,
-  //   });
-  //   hide();
-  // };
 
   const getModal = () => {
     /** isShowing affiche le modal */
@@ -124,14 +105,6 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
                 </label>
                 {/* ////////////////////////////// boutons de validation et suppression */}
                 <section className="flex flex-row-reverse my-2 gap-4 px-2">
-                  {/* <button
-                    className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-[#813]/40 shadow-[10px_10px_0px_0px] shadow-[#813]/50 bg-[#813] text-white px-6 py-2 text-normal"
-                    type="button"
-                    //  delete => string vide
-                    onClick={() => onDeleteComponent()}
-                  >
-                    Supprimer
-                  </button> */}
                   <button
                     className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-vert/40 shadow-[10px_10px_0px_0px] shadow-vert/50 bg-vert text-white px-6 py-2 text-normal"
                     type="button"

@@ -9,7 +9,6 @@ import ModalHeader from "./modals/ModalHeader";
 import ModalObjets from "./modals/ModalObjets";
 import ModalProduct from "./modals/ModalProduct";
 import ModalClient from "./modals/ModalClient";
-import ModalConcept from "./modals/ModalConcept";
 import ModalNewComponent from "./modals/ModalNewComponent";
 import HeaderData from "../data/HeaderData";
 
@@ -21,17 +20,11 @@ import HeaderData from "../data/HeaderData";
  */
 const ButtonAdmin = ({ type, data }) => {
   const [modal, setModal] = useState("");
-  // const [visible, setVisible] = useState();
-
-  // const toogleVisibility = () => {
-  //   setVisible((prevState) => ({ visible: !prevState.visible }));
-  // };
 
   const toggle = () => {
     setModal("");
   };
   const getModal = () => {
-    console.log(getModal);
     const myModal = {
       article: <ModalArticle isShowing hide={toggle} data={data} />,
       abonnement: <ModalAbonnement isShowing hide={toggle} data={data} />,
@@ -43,16 +36,13 @@ const ButtonAdmin = ({ type, data }) => {
       objets: <ModalObjets isShowing hide={toggle} data={data} />,
       product: <ModalProduct isShowing hide={toggle} data={data} />,
       client: <ModalClient isShowing hide={toggle} data={data} />,
-      concept: <ModalConcept isShowing hide={toggle} data={data} />,
       newComponent: <ModalNewComponent isShowing hide={toggle} data={data} />,
     };
     setModal(myModal[type]);
   };
 
   return (
-    <div className="">
-      {/* {console.log(modal)} */}
-      {/* {modal ? ( */}
+    <div>
       <button type="submit" onClick={() => getModal()}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

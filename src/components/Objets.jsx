@@ -24,7 +24,7 @@ const Objets = ({ data }) => {
         {authContext.token && <ButtonAdmin type="objets" data={data} />}
       </div>
       {data.details.map((cat) => (
-        <section className="md:w-1/2">
+        <section className="md:w-1/2" key={cat.appartenance}>
           <h1 className="uppercase font-bold text-h2">{cat.appartenance}</h1>
           <p>{cat.cible}</p>
         </section>

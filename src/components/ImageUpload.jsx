@@ -6,18 +6,15 @@ function ImageUpload() {
 
   const submitForm = (event) => {
     event.preventDefault();
-    console.log(uploadFile);
 
     const dataArray = new FormData();
     dataArray.append("file", uploadFile);
 
     axios
       .post("http://localhost:8000/api/upload", dataArray)
-      .then((response) => {
-        console.log(response);
-      })
+      .then(() => {})
       .catch((error) => {
-        console.log(error);
+        console.error(error);
       });
   };
   return (

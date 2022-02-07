@@ -71,12 +71,11 @@ const Pages = () => {
   // Connexion avec la base de donnée pour fetch sur chaque composant de page
   useEffect(() => {
     const pageRequest = pages || "accueil";
-    fetch(`${process.env.REACT_APP_BACK_END_URL}api/pages/${pageRequest}`) // `process.env.REACT_BACK_END_URL/${id_pages}`
+    fetch(`${process.env.REACT_APP_BACK_END_URL}api/pages/${pageRequest}`)
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setPage(data);
       });
   }, [pages]);

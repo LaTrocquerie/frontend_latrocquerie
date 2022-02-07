@@ -6,7 +6,6 @@ const ModalHeader = ({ isShowing, hide, HeaderData }) => {
   /** state qui est en lien avec la data de header pour l'afficher */
   const [menus, setHeader] = useState(HeaderData.menus);
   const [alt, setAlt] = useState(HeaderData.logo.alt);
-  // const [logo, setLogo] = useState(HeaderData.logo);
 
   const updateHeader = (value, type, obj) => {
     const newHeader = [...menus];
@@ -14,27 +13,11 @@ const ModalHeader = ({ isShowing, hide, HeaderData }) => {
     newHeader[index][type] = value;
     setHeader(newHeader);
   };
-  // const updateLogo = (value, type, obj) => {
-  //   const newLogo = { logo };
-  //   const index = newLogo.indexOf(obj);
-  //   newLogo[index][type] = value;
-  //   setLogo(newLogo);
-  // };
 
   const onUpdateComponent = () => {
-    console.log({
-      component: "header",
-      menus,
-    });
     hide();
   };
-  // const onDeleteComponent = () => {
-  //   console.log({
-  //     component: "header",
-  //     menus,
-  //   });
-  //   hide();
-  // };
+
   /** const qui contient le bouton cliquable pour afficher le modal */
   const getModal = () => {
     /** isShowing affiche le modal */

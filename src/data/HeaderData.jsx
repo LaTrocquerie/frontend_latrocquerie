@@ -22,8 +22,8 @@ const HeaderData = {
       name: "Services", // id_pages 5
     },
     {
-      to: "/contact",
-      name: "Contact", // id_pages 6
+      to: "/lieu",
+      name: "Lieu", // id_pages 6
     },
   ],
   logo: {

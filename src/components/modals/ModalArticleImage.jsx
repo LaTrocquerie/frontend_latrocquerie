@@ -2,15 +2,32 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import ImageUpload from "../ImageUpload";
+import { AuthContext } from "../../contexts/authContext";
 
 const ModalArticleImage = ({ isShowing, hide, data }) => {
   /** state pour changer ou non la valeur des inputs */
   const [cls, setCls] = useState(data.cls);
   const [titre, setTitre] = useState(data.titre);
+  const [src, setSrc] = useState(data.src);
   const [alt, setAlt] = useState(data.alt);
   const [description, setDescription] = useState(data.description);
+  const authContext = useContext(AuthContext);
+
 
   const onUpdateComponent = () => {
+    const form = {
+      component: "articleImage",
+      data: {
+        ...data,
+        cls,
+        titre,
+        src,
+        alt,
+        description,
+      },
+    };
+    updateComponent(form, authContext.token).then(() => {
+
     hide();
   };
 
@@ -70,14 +87,15 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
                     onChange={(event) => setTitre(event.target.value)}
                   />
                 </label>
-                <p className="">
+                <div>
                   image actuelle
                   <img
                     className="w-32 mt-2 mb-4"
                     src={data.src}
                     alt={data.alt}
+                    onChange={(event) => setSrc(event.target.value)}
                   />
-                </p>
+                </div>
                 Nouvelle image
                 <ImageUpload />
                 <label htmlFor="alt">

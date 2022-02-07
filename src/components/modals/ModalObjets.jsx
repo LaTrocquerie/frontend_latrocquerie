@@ -74,7 +74,7 @@ const ModalObjets = ({ isShowing, hide, data }) => {
               {details.map((item) => {
                 return (
                   <div>
-                    <label htmlFor="1" className="">
+                    <label htmlFor="1">
                       titre
                       <input
                         id=""
@@ -91,7 +91,7 @@ const ModalObjets = ({ isShowing, hide, data }) => {
                         }
                       />
                     </label>
-                    <label htmlFor="2" className="">
+                    <label htmlFor="2">
                       description
                       <input
                         id=""

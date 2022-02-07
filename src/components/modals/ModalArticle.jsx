@@ -85,7 +85,7 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                     onChange={(event) => setCls(event.target.value)}
                   />
                 </label>
-                <label htmlFor="titre" className="">
+                <label htmlFor="titre">
                   Titre
                   <input
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full uppercase font-light text-h1"

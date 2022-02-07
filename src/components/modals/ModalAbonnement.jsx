@@ -88,7 +88,7 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
                   onChange={(event) => setCls(event.target.value)}
                 />
               </label>
-              <label htmlFor="titre" className="">
+              <label htmlFor="titre">
                 Titre
                 <input
                   className="uppercase transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded my-2 px-2 w-full font-light text-h1"
@@ -103,54 +103,43 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
               {details.map((item) => {
                 return (
                   <div>
-                    <label htmlFor="nom" className="">
+                    <label htmlFor="nom">
                       ligne en gras
                       <input
                         id="nom"
                         className="transition uppercase font-bold text-h2 hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                         type="text"
                         value={item.detail}
-                        placeholder=""
                         onChange={(event) =>
                           updateDetail(event.target.value, "detail", item)
                         }
                       />
                     </label>
-                    <label htmlFor="nom" className="">
+                    <label htmlFor="nom">
                       ligne 1
                       <input
                         id="nom"
                         className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                         type="text"
                         value={item.description1}
-                        placeholder=""
                         onChange={(event) =>
                           updateDetail(event.target.value, "description1", item)
                         }
                       />
                     </label>
-                    <label htmlFor="nom" className="">
+                    <label htmlFor="nom">
                       ligne 2
                       <input
                         id="nom"
                         className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                         type="text"
                         value={item.description2}
-                        placeholder=""
                         onChange={(event) =>
                           updateDetail(event.target.value, "description2", item)
                         }
                       />
                     </label>
-                    <section className="flex flex-row-reverse my-2 gap-4 px-2">
-                      {/* <button
-                        className="transition hover:bg-rose hover:text-vert active:-skew-y-6 active:translate-y-1 active:shadow-[#813]/40 shadow-[10px_10px_0px_0px] shadow-[#813]/50 bg-[#813] text-white px-6 py-2 text-normal"
-                        type="button"
-                        onClick={() => deleteDetail(item)}
-                      >
-                        Supprimer
-                      </button> */}
-                    </section>
+                    <section className="flex flex-row-reverse my-2 gap-4 px-2" />
                   </div>
                 );
               })}
@@ -163,7 +152,7 @@ const ModalAbonnement = ({ isShowing, hide, data }) => {
                   Ajouter un autre bloc
                 </button>
               </section>
-              <label htmlFor="titre" className="">
+              <label htmlFor="titre">
                 ligne
                 <input
                   className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded my-2 px-2 w-full"

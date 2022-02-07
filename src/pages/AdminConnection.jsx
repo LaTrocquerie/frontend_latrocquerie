@@ -40,7 +40,7 @@ const AdminConnection = () => {
     <div className="p-4 md:text-lg gap-3 mx-auto flex items-center flex-col bg-vert text-blanc">
       <h1 className="uppercase text-h1 text-center mt-5">Authentification</h1>
       <div className="text-vert mb-4 mt-2">
-        <Link to="/testtest">
+        <Link to="/adminconnection">
           <form className="flex flex-col items-center">
             <label htmlFor="identifiant">
               Identifiant

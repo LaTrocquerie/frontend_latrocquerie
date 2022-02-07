@@ -68,6 +68,13 @@ const Pages = () => {
     return res;
   };
 
+  const setHead = (data) => {
+    document.title = data.page.titre;
+    const meta = document.createElement("meta");
+    meta.setAttribute("description", data.page.description);
+    document.getElementsByTagName("head")[0].appendChild(meta);
+  };
+
   // Connexion avec la base de donnée pour fetch sur chaque composant de page
   useEffect(() => {
     const pageRequest = pages || "accueil";
@@ -76,8 +83,8 @@ const Pages = () => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setPage(data);
+        setHead(data);
       });
   }, [pages]);
   return (

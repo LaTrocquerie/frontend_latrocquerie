@@ -20,20 +20,17 @@ const AdminConnection = () => {
   }, [email, password]);
 
   const getLogin = () => {
-    authContext
-      .loginUser(email, password)
-      .then((res) => {
-        if (authContext.email !== "") {
-          const provCookie = `user_token=${res};expires=${new Date(
-            Date.now() + 1000 * 60 * 60 * 4
-          )}`;
-          document.cookie = provCookie;
-          navigate("/");
-        } else {
-          setMsg(res);
-        }
-      })
-      .catch((err) => console.error(err));
+    authContext.loginUser(email, password).then((res) => {
+      if (authContext.email !== "") {
+        const provCookie = `user_token=${res};expires=${new Date(
+          Date.now() + 1000 * 60 * 60 * 4
+        )}`;
+        document.cookie = provCookie;
+        navigate("/");
+      } else {
+        setMsg(res);
+      }
+    });
   };
   return (
     <div className="p-4 md:text-lg gap-3 mx-auto flex items-center flex-col bg-vert text-blanc">

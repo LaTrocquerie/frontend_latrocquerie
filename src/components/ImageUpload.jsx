@@ -10,12 +10,7 @@ function ImageUpload() {
     const dataArray = new FormData();
     dataArray.append("file", uploadFile);
 
-    axios
-      .post("http://localhost:8000/api/upload", dataArray)
-      .then(() => {})
-      .catch((error) => {
-        console.error(error);
-      });
+    axios.post("http://localhost:8000/api/upload", dataArray).then(() => {});
   };
   return (
     <form onSubmit={submitForm}>

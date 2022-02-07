@@ -79,7 +79,7 @@ const ModalProduct = ({ isShowing, hide, data }) => {
                   onChange={(event) => setCls(event.target.value)}
                 />
               </label>
-              <label htmlFor="titre" className="">
+              <label htmlFor="titre">
                 Titre
                 <input
                   className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full uppercase font-light text-h1"
@@ -93,7 +93,7 @@ const ModalProduct = ({ isShowing, hide, data }) => {
               {details.map((item) => {
                 return (
                   <div>
-                    <label htmlFor="infos" className="">
+                    <label htmlFor="infos">
                       infos - paragraphe
                       <textarea
                         id="infos"
@@ -101,7 +101,6 @@ const ModalProduct = ({ isShowing, hide, data }) => {
                         type="text"
                         rows="4"
                         value={item.infos}
-                        placeholder=""
                         onChange={(event) =>
                           updateDetail(event.target.value, "infos", item)
                         }
@@ -115,7 +114,7 @@ const ModalProduct = ({ isShowing, hide, data }) => {
                         alt={item.alt}
                       />
                     </p>
-                    <label htmlFor="nom" className="">
+                    <label htmlFor="nom">
                       nouvelle image
                       <input
                         id="file"

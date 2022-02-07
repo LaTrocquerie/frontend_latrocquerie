@@ -90,7 +90,7 @@ const ModalContact = ({ isShowing, hide, data }) => {
                     onChange={(event) => setNom(event.target.value)}
                   />
                 </label>
-                <label htmlFor="telephone" className="">
+                <label htmlFor="telephone">
                   Téléphone
                   <input
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
@@ -101,14 +101,13 @@ const ModalContact = ({ isShowing, hide, data }) => {
                     onChange={(event) => setTelephone(event.target.value)}
                   />
                 </label>
-                <label htmlFor="email" className="">
+                <label htmlFor="email">
                   E-mail
                   <input
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                     id="email"
                     type="text"
                     value={email}
-                    placeholder=""
                     onChange={(event) => setEmail(event.target.value)}
                   />
                 </label>
@@ -116,7 +115,7 @@ const ModalContact = ({ isShowing, hide, data }) => {
                 {reseaux.map((item) => {
                   return (
                     <div>
-                      <label htmlFor="url" className="">
+                      <label htmlFor="url">
                         réseau social
                         <input
                           id="url"

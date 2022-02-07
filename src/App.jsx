@@ -22,7 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Pages />} />
           <Route path="/:pages" element={<Pages />} />
-          <Route path="/testtest" element={<AdminConnection />} />
+          <Route path="/adminconnection" element={<AdminConnection />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
         </Routes>
         <Footer />

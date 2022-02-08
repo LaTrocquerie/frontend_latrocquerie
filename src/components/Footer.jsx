@@ -35,7 +35,7 @@ const Footer = () => {
     event.preventDefault();
     axios({
       method: "POST",
-      url: "/api/email/send",
+      url: "https://trocquerieproject.herokuapp.com/api/email/send",
       data: {
         name,
         email,

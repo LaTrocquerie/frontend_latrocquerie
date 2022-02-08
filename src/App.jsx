@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import AdminConnection from "./pages/AdminConnection";
 import MentionsLegales from "./pages/MentionsLegales";
 import { AuthContext } from "./contexts/authContext";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const authContext = useContext(AuthContext);
@@ -18,6 +19,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
         <Header />
         <Routes>
           <Route path="/" element={<Pages />} />

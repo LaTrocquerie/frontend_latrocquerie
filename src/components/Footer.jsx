@@ -79,9 +79,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="md:order-3 mt-4 md:basis-1/3 list-none">
-          <h2 className="text-h2 font-bold">{FooterData.titreHoraires}</h2>
+          <h2 className="text-h2 font-bold mb-4">{FooterData.titreHoraires}</h2>
           {FooterData.horaires.map((horaire) => (
-            <li key={horaire.id}>{horaire.horaire}</li>
+            <div className="mt-1">
+              <li key={horaire.id}>{horaire.horaire}</li>
+            </div>
           ))}
         </div>
         <p className="md:order-2 md:basis-1/3 flex justify-center items-center gap-1">

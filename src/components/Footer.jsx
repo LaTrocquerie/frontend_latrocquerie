@@ -24,15 +24,66 @@ const Footer = () => {
       </div>
       <Map />
       <div className="py-4 flex flex-col items-center md:flex-row md:flex-wrap md:gap-0 text-center text-vert gap-5">
-        <div className="md:order-1 md:basis-1/3 list-none">
-          <h2 className="text-h2 font-bold">{FooterData.titreContact}</h2>
-          <li>{FooterData.contact[0].mail}</li>
-          <li>{FooterData.contact[1].phone}</li>
+        <div className="md:order-1 mt-4 md:basis-1/3 list-none">
+          <h2 className="text-h2 mb-3 font-bold">{FooterData.titreContact}</h2>
+          <li className="flex justify-center">
+            {FooterData.contact[0].mail}
+            <img
+              className="mr-1 w-6 ml-3"
+              src={FooterData.contact[2].srcMailIcon}
+              alt="phone icon"
+            />
+          </li>
+          <li className="flex justify-center mt-2">
+            {FooterData.contact[1].phone}
+            <img
+              className="mr-1 w-6 ml-3"
+              src={FooterData.contact[3].srcPhoneIcon}
+              alt="phone icon"
+            />
+          </li>
+          <div className="flex mt-3 h-auto flex-row justify-center">
+            <a
+              href={FooterData.contact[4].url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="transition hover:bg-rose rounded active:translate-y-1"
+                src={FooterData.contact[4].src}
+                alt={FooterData.contact[4].alt}
+              />
+            </a>
+            <a
+              href={FooterData.contact[5].url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="transition hover:bg-rose rounded active:translate-y-1"
+                src={FooterData.contact[5].src}
+                alt={FooterData.contact[5].alt}
+              />
+            </a>
+            <a
+              href={FooterData.contact[6].url}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                className="transition hover:bg-rose rounded active:translate-y-1"
+                src={FooterData.contact[6].src}
+                alt={FooterData.contact[6].alt}
+              />
+            </a>
+          </div>
         </div>
-        <div className="md:order-3 md:basis-1/3 list-none">
-          <h2 className="text-h2 font-bold">{FooterData.titreHoraires}</h2>
+        <div className="md:order-3 mt-4 md:basis-1/3 list-none">
+          <h2 className="text-h2 font-bold mb-3">{FooterData.titreHoraires}</h2>
           {FooterData.horaires.map((horaire) => (
-            <li key={horaire.id}>{horaire.horaire}</li>
+            <div className="mt-1">
+              <li key={horaire.id}>{horaire.horaire}</li>
+            </div>
           ))}
         </div>
         <p className="md:order-2 md:basis-1/3 flex justify-center items-center gap-1">

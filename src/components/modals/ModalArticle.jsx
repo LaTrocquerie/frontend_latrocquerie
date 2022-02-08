@@ -1,7 +1,5 @@
-/* eslint-disable indent */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
-import { useContext } from "react/cjs/react.development";
 import updateComponent from "../../services/admin";
 import { AuthContext } from "../../contexts/authContext";
 

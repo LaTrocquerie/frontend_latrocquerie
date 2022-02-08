@@ -25,7 +25,7 @@ const Footer = () => {
       <Map />
       <div className="py-4 flex flex-col items-center md:flex-row md:flex-wrap md:gap-0 text-center text-vert gap-5">
         <div className="md:order-1 mt-4 md:basis-1/3 list-none">
-          <h2 className="text-h2 mb-2 font-bold">{FooterData.titreContact}</h2>
+          <h2 className="text-h2 mb-3 font-bold">{FooterData.titreContact}</h2>
           <li className="flex justify-center">
             {FooterData.contact[0].mail}
             <img
@@ -79,7 +79,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="md:order-3 mt-4 md:basis-1/3 list-none">
-          <h2 className="text-h2 font-bold mb-4">{FooterData.titreHoraires}</h2>
+          <h2 className="text-h2 font-bold mb-3">{FooterData.titreHoraires}</h2>
           {FooterData.horaires.map((horaire) => (
             <div className="mt-1">
               <li key={horaire.id}>{horaire.horaire}</li>

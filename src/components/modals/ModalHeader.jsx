@@ -1,6 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import { useState } from "react/cjs/react.development";
 
 const ModalHeader = ({ isShowing, hide, HeaderData }) => {
   /** state qui est en lien avec la data de header pour l'afficher */
@@ -55,7 +54,7 @@ const ModalHeader = ({ isShowing, hide, HeaderData }) => {
                 En tête - Modification du contenu
               </h1>
               <div>
-                <p className="">
+                <p>
                   logo actuel
                   <img
                     className="w-32 mt-2 mb-4"
@@ -63,7 +62,7 @@ const ModalHeader = ({ isShowing, hide, HeaderData }) => {
                     alt={HeaderData.logo.alt}
                   />
                 </p>
-                <label htmlFor="nom" className="">
+                <label htmlFor="nom">
                   nouveau logo
                   <input
                     id="file"
@@ -88,27 +87,25 @@ const ModalHeader = ({ isShowing, hide, HeaderData }) => {
                 <div>{menu.to}</div>;
                 return (
                   <div>
-                    <label htmlFor="nom" className="">
+                    <label htmlFor="nom">
                       Nom du menu
                       <input
                         id="nom"
                         className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                         type="text"
                         value={menu.name}
-                        placeholder=""
                         onChange={(event) =>
                           updateHeader(event.target.value, "name", menu)
                         }
                       />
                     </label>
-                    <label htmlFor="nom" className="">
+                    <label htmlFor="nom">
                       lien
                       <input
                         id="nom"
                         className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full"
                         type="text"
                         value={menu.to}
-                        placeholder=""
                         onChange={(event) =>
                           updateHeader(event.target.value, "to", menu)
                         }

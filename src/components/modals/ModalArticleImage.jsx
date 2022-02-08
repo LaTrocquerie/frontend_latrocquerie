@@ -1,7 +1,7 @@
-/* eslint-disable indent */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
 import ImageUpload from "../ImageUpload";
+import updateComponent from "../../services/admin";
 import { AuthContext } from "../../contexts/authContext";
 
 const ModalArticleImage = ({ isShowing, hide, data }) => {
@@ -12,7 +12,6 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
   const [alt, setAlt] = useState(data.alt);
   const [description, setDescription] = useState(data.description);
   const authContext = useContext(AuthContext);
-
 
   const onUpdateComponent = () => {
     const form = {
@@ -27,8 +26,8 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
       },
     };
     updateComponent(form, authContext.token).then(() => {
-
-    hide();
+      hide();
+    });
   };
 
   const getModal = () => {

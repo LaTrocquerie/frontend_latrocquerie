@@ -1,7 +1,6 @@
 /* eslint-disable indent */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
-import { useContext } from "react/cjs/react.development";
 import updateComponent from "../../services/admin";
 import { AuthContext } from "../../contexts/authContext";
 
@@ -14,10 +13,10 @@ const ModalArticle = ({ isShowing, hide, data }) => {
   const [url, setUrl] = useState(data.url);
   const [cls, setCls] = useState(data.cls);
   const [bouton, setBouton] = useState(data.bouton);
-  const [clsBouton, setClsBouton] = useState(data.clsBouton);
   const [clsCitation, setClsCitation] = useState(data.clsCitation);
   const authContext = useContext(AuthContext);
 
+  // bouton valider met à jour la base de données, si authentifié puis ferme le modal
   const onUpdateComponent = () => {
     const form = {
       component: "article",
@@ -30,13 +29,43 @@ const ModalArticle = ({ isShowing, hide, data }) => {
         url,
         cls,
         bouton,
-        clsBouton,
         clsCitation,
       },
     };
     updateComponent(form, authContext.token).then(() => {
       hide();
     });
+  };
+
+  // changement de fond vert/gris_clair du composant
+  const handleClsCheckbox = () => {
+    if (cls === null) {
+      setCls(1);
+    } else if (cls === 1) {
+      setCls(2);
+    } else {
+      setCls(1);
+    }
+  };
+
+  const handleBoutonCheckbox = () => {
+    if (bouton === null) {
+      setBouton(1);
+    } else if (bouton === 1) {
+      setBouton(2);
+    } else {
+      setBouton(1);
+    }
+  };
+
+  const handleClsCitationCheckbox = () => {
+    if (clsCitation === null) {
+      setClsCitation(1);
+    } else if (clsCitation === 1) {
+      setClsCitation(2);
+    } else {
+      setClsCitation(1);
+    }
   };
 
   const getModal = () => {
@@ -75,17 +104,17 @@ const ModalArticle = ({ isShowing, hide, data }) => {
               </h1>
               {/* // style section interactions utilisateur */}
               <section className="p-2">
-                <label className="flex flex-col" htmlFor="b">
-                  Fond vert ?
+                <label className="flex flex-col" htmlFor="checkbox">
+                  Changer la couleur du fond ?
                   <input
                     className="w-5 h-5 my-2"
-                    id="b"
+                    id="checkbox"
                     type="checkbox"
                     value={cls}
-                    onChange={(event) => setCls(event.target.value)}
+                    onChange={handleClsCheckbox}
                   />
                 </label>
-                <label htmlFor="titre">
+                <label htmlFor="titre" className="">
                   Titre
                   <input
                     className="transition hover:shadow-xl focus-within:shadow-xl focus:outline-none rounded mt-2 mb-4 px-2 w-full uppercase font-light text-h1"
@@ -134,25 +163,13 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                 </label>
                 <div className="flex flex-col">
                   <label htmlFor="b">
-                    Présence de bouton ?
+                    ajouter/supprimer un bouton ?
                     <input
                       className="m-2 w-5 h-5 mb-4"
                       id="b"
                       type="checkbox"
                       value={bouton}
-                      placeholder="texte"
-                      onChange={(event) => setBouton(event.target.value)}
-                    />
-                  </label>
-                  <label htmlFor="b">
-                    Bouton sur fond vert ?
-                    <input
-                      className="m-2 w-5 h-5 mb-4"
-                      id="b"
-                      type="checkbox"
-                      value={clsBouton}
-                      placeholder="texte"
-                      onChange={(event) => setClsBouton(event.target.value)}
+                      onChange={handleBoutonCheckbox}
                     />
                   </label>
                 </div>
@@ -175,7 +192,7 @@ const ModalArticle = ({ isShowing, hide, data }) => {
                     type="checkbox"
                     value={clsCitation}
                     placeholder="/nom du menu, exemple: /concept pour lien vers page concept"
-                    onChange={(event) => setClsCitation(event.target.value)}
+                    onChange={handleClsCitationCheckbox}
                   />
                 </label>
               </section>

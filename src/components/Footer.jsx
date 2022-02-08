@@ -35,7 +35,7 @@ const Footer = () => {
     event.preventDefault();
     axios({
       method: "POST",
-      url: "http://localhost:8000/api/email/send",
+      url: "/api/email/send",
       data: {
         name,
         email,

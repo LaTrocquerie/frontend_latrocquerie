@@ -3,7 +3,7 @@ const footer = {
   titreContact: "Contact",
   contact: [
     { id: 1, mail: "latrocquerie@gmail.com" },
-    { id: 2, phone: "06 79 21 42 19" },
+    { id: 2, phone: "06 00 00 00 00" },
     {
       id: 3,
       srcMailIcon: "./assets/icones/icon_mail.svg",

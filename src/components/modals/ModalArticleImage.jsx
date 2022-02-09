@@ -13,6 +13,7 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
   const [description, setDescription] = useState(data.description);
   const authContext = useContext(AuthContext);
 
+  // bouton valider met à jour la base de données, si authentifié puis ferme le modal
   const onUpdateComponent = () => {
     const form = {
       component: "articleImage",
@@ -28,6 +29,17 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
     updateComponent(form, authContext.token).then(() => {
       hide();
     });
+  };
+
+  // changement de fond vert/gris_clair du composant
+  const handleClsCheckbox = () => {
+    if (cls === null) {
+      setCls(1);
+    } else if (cls === 1) {
+      setCls(2);
+    } else {
+      setCls(1);
+    }
   };
 
   const getModal = () => {
@@ -65,14 +77,14 @@ const ModalArticleImage = ({ isShowing, hide, data }) => {
               </h1>
               {/* // style section interactions utilisateur */}
               <section className="p-2">
-                <label className="flex flex-col" htmlFor="b">
-                  Arrière-plan vert ?
+                <label className="flex flex-col" htmlFor="checkbox">
+                  Changer la couleur du fond ?
                   <input
                     className="w-5 h-5 my-2"
-                    id="b"
+                    id="checkbox"
                     type="checkbox"
                     value={cls}
-                    onChange={(event) => setCls(event.target.value)}
+                    onChange={handleClsCheckbox}
                   />
                 </label>
                 <label htmlFor="titre" className="">

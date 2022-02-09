@@ -53,7 +53,7 @@ const Footer = () => {
       } else if (response.data.status === "fail") {
         setAlert(
           <span className="text-red-600">
-            Lenvoi du message a échoué! (erreur serveur)
+            L&32;envoi du message a échoué! (erreur serveur)
           </span>
         );
       }
@@ -71,7 +71,7 @@ const Footer = () => {
           <div>
             <input
               className="border-2 border-vert rounded-md p-2 m-2 focus:outline-none focus:border-rose sm:pr-96"
-              placeholder="Name"
+              placeholder="Nom"
               id="name"
               type="text"
               required
@@ -93,7 +93,7 @@ const Footer = () => {
           <div>
             <input
               className="border-2 border-vert rounded-md p-2 m-2 focus:outline-none focus:border-rose sm:pr-96"
-              placeholder="Subject"
+              placeholder="Objet"
               id="subject"
               type="text"
               required
@@ -115,7 +115,7 @@ const Footer = () => {
             className="text-white bg-vert p-2 px-16 m-2 rounded-md sm:px-64"
             type="submit"
           >
-            Submit
+            Envoyer
           </button>
           {alert && <p>{alert}</p>}
         </form>

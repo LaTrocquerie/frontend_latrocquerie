@@ -49,7 +49,7 @@ const Header = () => {
                   <Logo data={HeaderData.logo} />
                 </Link>
                 <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-14">
+                  <div className="flex space-x-8 lg:space-x-14">
                     {HeaderData.menus.map((item) => (
                       <Link
                         to={item.to}

@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import React, { useState, useContext } from "react";
 import ReactDOM from "react-dom";
 import updateComponent from "../../services/admin";

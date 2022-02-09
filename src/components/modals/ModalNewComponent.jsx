@@ -1,7 +1,5 @@
-/* eslint-disable indent */
 import React from "react";
 import ReactDOM from "react-dom";
-// import Concept from "../../data/Concept";
 
 const ModalNewComponent = ({ isShowing, hide }) => {
   const getModal = () => {

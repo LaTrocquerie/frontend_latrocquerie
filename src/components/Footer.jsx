@@ -66,11 +66,11 @@ const Footer = () => {
         {authContext.token && <ButtonAdmin type="footer" />}
       </div>
       <Map />
-      <div className="flex flex-col items-center border-b">
+      <div className="flex flex-col content-center border-b mx-2 md:mx-8 lg:mx-44 xl:mx-96 ">
         <form id="contact-form" onSubmit={submitEmail} method="POST">
           <div>
             <input
-              className="border-2 border-vert rounded-md p-2 m-2 focus:outline-none focus:border-rose sm:pr-96"
+              className="border-2 border-vert rounded-md p-2 mt-2 w-full focus:outline-none focus:border-rose"
               placeholder="Nom"
               id="name"
               type="text"
@@ -81,7 +81,7 @@ const Footer = () => {
           </div>
           <div>
             <input
-              className="border-2 border-vert rounded-md p-2 m-2 focus:outline-none focus:border-rose sm:pr-96"
+              className="border-2 border-vert rounded-md p-2 mt-2 w-full focus:outline-none focus:border-rose"
               placeholder="Email"
               id="email"
               type="email"
@@ -92,7 +92,7 @@ const Footer = () => {
           </div>
           <div>
             <input
-              className="border-2 border-vert rounded-md p-2 m-2 focus:outline-none focus:border-rose sm:pr-96"
+              className="border-2 border-vert rounded-md p-2  mt-2 w-full focus:outline-none focus:border-rose"
               placeholder="Objet"
               id="subject"
               type="text"
@@ -103,7 +103,7 @@ const Footer = () => {
           </div>
           <div>
             <textarea
-              className="border-2 border-vert rounded-md p-2 m-2 focus:outline-none focus:border-rose sm:pr-96"
+              className="border-2 border-vert rounded-md p-2  mt-2 w-full focus:outline-none focus:border-rose"
               placeholder="Message"
               id="message"
               required
@@ -112,7 +112,7 @@ const Footer = () => {
             />
           </div>
           <button
-            className="text-white bg-vert p-2 px-16 m-2 rounded-md sm:px-64"
+            className="text-white bg-vert p-2 mt-2 w-32 rounded-md"
             type="submit"
           >
             Envoyer
